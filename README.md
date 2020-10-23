@@ -29,7 +29,7 @@ Coding requirements
 
 2.Data structures for sorting game status: During the game, the player’s ability points will be saved via an array in heap memory, and when saving the player’s status, the array of abilities will be copied into a file.
 
-3.Dynamic memory management: The abilities of a player (input) will be copied into the heap memory in the form of an array as the game starts. In the home menu of the game, the player can create or delete their account. As the player creates or deletes the account, the array in heap memory will be managed according to the player’s order (create/delete).
+3.Dynamic memory management: The abilities of a player (input) will be copied into the heap memory in the form of an array as the game starts. The array will be a 2D array, where each array is the game data of a player, and each player array has its own game data (HP, AD, BP, etc.). In the home menu of the game, the player can create or delete their account. As the player creates or deletes the account, the array in heap memory will be managed according to the player’s order (create/delete).
 
 4.File input/output (e.g., for loading/saving game status): The players data is stored as an output text file, which includes the nickname and the player’s ability point. In the beginning of the game, the system inputs the text file and allows the player to choose its own account and continue the game once the account is created. The output of the code will be the players game data. The game data will be stored in heap memory, so the data in heap memory will be copied into the file, overwriting the file. To save the game data, the player should go to the village.
 
