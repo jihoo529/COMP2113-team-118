@@ -34,6 +34,7 @@ struct Usernames{
 
 \\ void save_data();
 \\ void village();
+\\ void store();
 \\ void dungeon();
 
 int main(){
