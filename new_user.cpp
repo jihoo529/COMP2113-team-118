@@ -1,4 +1,5 @@
 #include <iostream>
+#include "new_user.h"
 using namespace std;
 
 void new_user(Usernames* user, Game_data* data, New_player initial){
