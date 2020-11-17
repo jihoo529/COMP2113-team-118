@@ -10,18 +10,18 @@ using namespace std;
 int main(/*double &stat[]*/){
 	//sponMon(); //spnMon has 2 arguments, monLv and monBP (monBP is between 0 and 1)
 	srand(time(0));
-	int HP = 100;
-	int AD = 20;
-	int BP = 30;
-	double XP = 50;
-	int CP = 30;
+	int hp = 100;
+	int ad = 20;
+	int bp = 30;
+	double xp = 50;
+	int cp = 30;
 	int monAD = 30;
 	int monHP = 80;
 	int monBP = 40;
 
  	int turn = random() % 10;
 	//int totalHP = stat[INDEX];//totalHP = initial HP 
-	int totalHP = HP;
+	int totalHP = hp;
 	int totalmonHP = monHP;
 	int win;
 	if(turn >= 5){
@@ -34,10 +34,10 @@ int main(/*double &stat[]*/){
 	while(run == 1){
 		srand(time(0));
 		std::system("clear");
-		cout << "[HP] " << HP << " / " << totalHP << endl;
+		cout << "[HP] " << hp << " / " << totalHP << endl;
 		cout << "[Enemy] " << monHP << " / " << totalmonHP << endl;
 		int input;
-		double winXP = XP * 0.25; float prob;
+		double winXP = xp * 0.25; float prob;
 		if(turn == 1){
 			cout << endl;
 			cout << "What will you do ?" << endl;
@@ -51,12 +51,12 @@ int main(/*double &stat[]*/){
 				}
 				else{
 					prob = rand() % 100; 
-					if(prob < CP){
-						damage = AD * 2; // calculating critical damage
+					if(prob < cp){
+						damage = ad * 2; // calculating critical damage
 						cout << "Critical HIT !!" << endl;
 					}
 					else{
-						damage = AD;
+						damage = ad;
 					}
 
 					cout << damage << " damage dealt !" << endl;
@@ -65,8 +65,8 @@ int main(/*double &stat[]*/){
 				}
 			}
 			else if(input == 2){
-				cout << (totalHP-HP) *0.5 << " healed !" << endl;
-				HP = (totalHP - HP)*0.5 + HP ; //Reset HP
+				cout << (totalHP-hp) *0.5 << " healed !" << endl;
+				hp = (totalHP - hp)*0.5 + hp ; //Reset HP
 			}
 			turn = 0;
 			sleep(2);
@@ -83,7 +83,7 @@ int main(/*double &stat[]*/){
 				monDamage = monAD;
 			}
 			prob = rand() % 100;
-			if(prob < BP){
+			if(prob < bp){
 					cout << "Blocked enemy's attack !" << endl;
 			}else{
 				if(ult % 3 == 0){
@@ -92,7 +92,7 @@ int main(/*double &stat[]*/){
 				}else{
 					cout << "Damaged by " << monDamage <<"!"<< endl;
 				}
-				HP = HP - monDamage;
+				hp = hp - monDamage;
 				//cout << "[HP] " << HP << " / " << totalHP << endl;
 			}
 			
@@ -104,7 +104,7 @@ int main(/*double &stat[]*/){
 		}
 		//sleep(2);
 
-		if(HP <= 0){
+		if(hp <= 0){
 			std::system("clear");
 			cout << "YOU: [HP] 0 / " << totalHP << endl;
 			cout << "ENEMY: [HP] " << monHP << " / " << totalmonHP << endl;
@@ -116,7 +116,7 @@ int main(/*double &stat[]*/){
 		}
 		if(monHP <= 0){
 			std::system("clear");
-			cout << "YOU: [HP] " << HP << " / " << totalHP << endl;
+			cout << "YOU: [HP] " << hp << " / " << totalHP << endl;
 			cout << "ENEMY: [HP] 0 / " << totalmonHP << endl;
 			cout << "You defeated the monster!" << endl;
 			cout << winXP << " xp gained !" << endl;
