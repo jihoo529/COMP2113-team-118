@@ -2,6 +2,7 @@
 #include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 using namespace std;
 
 //const stat[] = { }
@@ -11,14 +12,14 @@ int main(/*double &stat[]*/){
 	srand(time(0));
 	int HP = 100;
 	int AD = 20;
-	double BP = 0.2;
+	double BP = 0.3;
 	double XP = 50;
 	double CP = 0.3;
-	int monAD = 10;
+	int monAD = 30;
 	int monHP = 80;
-	int monBP = 0.4;
+	double monBP = 0.4;
 
-	int turn = random() % 10;
+ 	int turn = random() % 10;
 	//int totalHP = stat[INDEX];//totalHP = initial HP 
 	int totalHP = HP;
 	int totalmonHP = monHP;
@@ -26,34 +27,40 @@ int main(/*double &stat[]*/){
 	if(turn >= 5){
 		turn = 1;
 	}else{turn = 0;}
-
+	
+	
 	int run = 1; int ult = 1;
 	int damage;
 	while(run == 1){
+		srand(time(0));
 		std::system("clear");
 		cout << "[HP] " << HP << " / " << totalHP << endl;
 		cout << "[Enemy] " << monHP << " / " << totalmonHP << endl;
 		int input;
 		double winXP = XP * 0.25; float prob;
 		if(turn == 1){
+			cout << endl;
 			cout << "What will you do ?" << endl;
 			cout << "1. Attack" << endl;
 			cout << "2. Health potion" << endl;
 			cin >> input ;
 			if(input == 1){
-				prob = (rand() % 100)/100; //double between 0 and 1
-				if(prob < monBP){//Monster's blocking probability
+				prob = rand() % 100; //double between 0 and 1
+				if(prob < 100*monBP){//Monster's blocking probability
 					cout << "Attack BLOCKED !"<< endl;
-					
-				}else{
-					prob = (rand()%100)/100; 
-					if(prob < CP){
+				}
+				else{
+					prob = rand() % 100; 
+					if(prob < 100*CP){
 						damage = AD * 2; // calculating critical damage
 						cout << "Critical HIT !!" << endl;
-					}else{damage = AD;}
+					}
+					else{
+						damage = AD;
+					}
 
-					cout << damage << " damage !" << endl;
-					cout << monHP - damage << "/" << monHP << endl; ; //damage dealt to monster
+					cout << damage << " damage dealt !" << endl;
+					//cout << monHP - damage << "/" << monHP << endl; ; //damage dealt to monster
 					monHP = monHP - damage;
 				}
 			}
@@ -62,45 +69,65 @@ int main(/*double &stat[]*/){
 				HP = (totalHP - HP)*0.5 + HP ; //Reset HP
 			}
 			turn = 0;
-			break;
+			sleep(2);
 		}
-
+		
 		else if(turn == 0){//monster's turn
-			int monDamage;
+			int monDamage = monAD;
+			cout << endl;
 			cout << "Monster attaced you !" << endl;
-
+			//cout << ult << endl;
 			if(ult % 3 == 0){
 				monDamage = 2 * monAD;
 			}else{
 				monDamage = monAD;
 			}
-			prob = (rand() % 100)/100;
-			if(prob < BP){
-				cout << "Blocked enemy's attack !" << endl;
+			prob = rand() % 100;
+			if(prob < 100*BP){
+					cout << "Blocked enemy's attack !" << endl;
 			}else{
-				cout << "Damaged by " << monDamage <<"!"<< endl;
+				if(ult % 3 == 0){
+					cout << "Enemy got angree !" << endl;
+					cout << "Damaged by " << monDamage <<"!!!" << endl;
+				}else{
+					cout << "Damaged by " << monDamage <<"!"<< endl;
+				}
 				HP = HP - monDamage;
-				cout << "[HP] " << HP << " / " << totalHP << endl;
+				//cout << "[HP] " << HP << " / " << totalHP << endl;
 			}
+			
+			
+			
 			ult += 1;
 			turn = 1;
-			break;
+			sleep(2);
 		}
-		if(HP < 0){
+		//sleep(2);
+
+		if(HP <= 0){
+			std::system("clear");
+			cout << "YOU: [HP] 0 / " << totalHP << endl;
+			cout << "ENEMY: [HP] " << monHP << " / " << totalmonHP << endl;
+			cout << "....." << endl;
 			cout << "You seriously injured... heading back to village" << endl;
+
 			win = 0;
 			run = 0;
 		}
-		if(monHP < 0){
+		if(monHP <= 0){
+			std::system("clear");
+			cout << "YOU: [HP] " << HP << " / " << totalHP << endl;
+			cout << "ENEMY: [HP] 0 / " << totalmonHP << endl;
 			cout << "You defeated the monster!" << endl;
 			cout << winXP << " xp gained !" << endl;
 			XP += winXP;
 			win = 1;
 			run = 0;
 		}
-		continue;
+		
 	}
 
 	cout << "game ended " << endl;
 	return win;
+	
 }
