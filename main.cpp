@@ -5,6 +5,9 @@
 #include "load_name.h"
 #include "new_user.h"
 #include "tutorial.h"
+#include "village.h"
+#include "store.h"
+#include "dungeon.h"
 using namespace std;
 
 const int MAXHP = 10000;
@@ -13,7 +16,7 @@ const int MAXBP = 40;
 const int MAXLEVEL = 100;
 
 struct Player{
-	int level, max_xp, current_xp, hp, ad, bp, cp;
+	int level, max_xp, current_xp, totalHP, hp, ad, bp, cp;
 };
 struct Game_data{
 	string username;
@@ -23,18 +26,20 @@ struct New_player{
 	int level = 1;
 	int max_xp = level*50;
 	int current_xp = 0;
-	int hp = 50, ad = 10, bp = 5;
+	int totalHP = 50, hp = 50, ad = 10, bp = 5;
 	int cp = 0;
 };
 struct Usernames{
+	string user[5];
 	int num = 0;
-	string user[num];
+	\\ int num = 0;
+	\\ string user[num];
 };
 
 \\ void save_data();
-\\ void village(Game_data* data);
-\\ void store(Game_data* data);
-\\ void dungeon(Game_data* data);
+\\ void village(Game_data* data, int* location);
+\\ void store(Game_data* data, int* location);
+\\ void dungeon(Game_data* data, int* location);
 
 int main(){
 	ofstream fout;
@@ -60,8 +65,8 @@ int main(){
 	}
 	int location = 1;
 	while(location != 0){
-		if(location == 1){village(&data);}
-		else if(location == 2){store(&data);}
-		else if(location == 3){dungeon(&data);}
+		if(location == 1){village(&data, &location);}
+		else if(location == 2){store(&data, &location);}
+		else if(location == 3){dungeon(&data, &location);}
 	}
 }
