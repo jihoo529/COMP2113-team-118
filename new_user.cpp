@@ -1,8 +1,12 @@
 #include <iostream>
+#include <string>
 #include "new_user.h"
 using namespace std;
 
-void new_user(Usernames* user, Game_data* data, New_player initial, string newname){
+void new_user(Usernames* user, Game_data* data, New_player initial){
+	cout << "Username : " << endl;
+	string newname;
+	cin >> newname;
 	bool run = 1;
 	while(run == 1){
 		int count = 0;
