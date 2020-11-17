@@ -38,4 +38,5 @@ void load_data(string* username, int* level, int* max_xp, int* current_xp, int* 
 		line = line.erase(0 , index);
 		debuff[i] = line;
 	}
+	fin.close();
 }
