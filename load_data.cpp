@@ -26,6 +26,9 @@ void load_data(int current_player, Game_data* data){
 			data.play.current_xp = line.substr(0, index);
 			line = line.erase(0, index);
 			index = line.find(" ");
+			data.play.totalHP = line.substr(0, index);
+			line = line.erase(0, index);
+			index = line.find(" ");
 			data.play.hp = line.substr(0, index);
 			line = line.erase(0, index);
 			index = line.find(" ");
