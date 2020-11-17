@@ -11,7 +11,6 @@ const int MAXHP = 10000;
 const int MAXAD = 10000;
 const int MAXBP = 40;
 const int MAXLEVEL = 100;
-const int MAXUSERS = 5;
 
 struct Player{
 	int level, max_xp, current_xp, hp, ad, bp, cp;
@@ -28,14 +27,14 @@ struct New_player{
 	int cp = 0;
 };
 struct Usernames{
-	string user[MAXUSERS];
 	int num = 0;
+	string user[num];
 };
 
 \\ void save_data();
-\\ void village();
-\\ void store();
-\\ void dungeon();
+\\ void village(Game_data* data);
+\\ void store(Game_data* data);
+\\ void dungeon(Game_data* data);
 
 int main(){
 	ofstream fout;
@@ -61,8 +60,8 @@ int main(){
 	}
 	int location = 1;
 	while(location != 0){
-		if(location == 1){village();}
-		else if(location == 2){store();}
-		else if(location == 3){dungeon();}
+		if(location == 1){village(&data);}
+		else if(location == 2){store(&data);}
+		else if(location == 3){dungeon(&data);}
 	}
 }
