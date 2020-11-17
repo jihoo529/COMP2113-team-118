@@ -33,6 +33,8 @@ struct Usernames{
 };
 
 \\ void save_data();
+\\ void village();
+\\ void dungeon();
 
 int main(){
 	ofstream fout;
@@ -45,20 +47,21 @@ int main(){
 	load_name(*user.user[0], *user.num);
 	int sel = 0;
 	cin >> sel;
-	cout << "Username : " << endl;
-	string newname;
-	cin >> newname;
 	if(sel == 1){
 		new_user(&user, &data, initial);
 		tutorial();
 	}
 	else if(sel == 2){
 		for(int i = 0; i<user.num; ++i){
-			if(user.user[i] == newname){
-				current_player = i;
-				break;
-			}
+			cout << "[" << i << "]" << user.user[i] << endl;
 		}
+		cin >> current_player;
 		load_data(current_player, &data);
+	}
+	int location = 1;
+	while(location != 0){
+		if(location == 1){village();}
+		else if(location == 2){store();}
+		else if(location == 3){dungeon();}
 	}
 }
