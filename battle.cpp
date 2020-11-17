@@ -12,12 +12,12 @@ int main(/*double &stat[]*/){
 	srand(time(0));
 	int HP = 100;
 	int AD = 20;
-	double BP = 0.3;
+	int BP = 30;
 	double XP = 50;
-	double CP = 0.3;
+	int CP = 30;
 	int monAD = 30;
 	int monHP = 80;
-	double monBP = 0.4;
+	int monBP = 40;
 
  	int turn = random() % 10;
 	//int totalHP = stat[INDEX];//totalHP = initial HP 
@@ -46,12 +46,12 @@ int main(/*double &stat[]*/){
 			cin >> input ;
 			if(input == 1){
 				prob = rand() % 100; //double between 0 and 1
-				if(prob < 100*monBP){//Monster's blocking probability
+				if(prob < monBP){//Monster's blocking probability
 					cout << "Attack BLOCKED !"<< endl;
 				}
 				else{
 					prob = rand() % 100; 
-					if(prob < 100*CP){
+					if(prob < CP){
 						damage = AD * 2; // calculating critical damage
 						cout << "Critical HIT !!" << endl;
 					}
@@ -83,12 +83,12 @@ int main(/*double &stat[]*/){
 				monDamage = monAD;
 			}
 			prob = rand() % 100;
-			if(prob < 100*BP){
+			if(prob < BP){
 					cout << "Blocked enemy's attack !" << endl;
 			}else{
 				if(ult % 3 == 0){
 					cout << "Enemy got angree !" << endl;
-					cout << "Damaged by " << monDamage <<"!!!" << endl;
+					cout << "Damaged by " << monDamage <<"!!!" << endl; //monster gives double damage every 3 times of attack
 				}else{
 					cout << "Damaged by " << monDamage <<"!"<< endl;
 				}

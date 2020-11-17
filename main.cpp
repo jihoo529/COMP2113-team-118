@@ -3,13 +3,14 @@
 #include <fstream>
 #include "load_data.h"
 using namespace std;
-const MAXHP = 10000;
-const MAXAD = 10000;
-const MAXBP = 40;
-const MAXLEVEL = 100;
-const MAXUSERS = 5;
+const int MAXHP = 10000;
+const int MAXAD = 10000;
+const int MAXBP = 100;
+const int MAXCP = 100;
+const int MAXLEVEL = 100;
+const int MAXUSERS = 5;
 struct Player{
-	int level, max_xp, current_xp, hp, ad, bp, cp, debuff;
+	int level, max_xp, current_XP, HP, AD, BP, CP; // debuff; removed debuff
 };
 struct Game_data{
 	string username;
@@ -19,8 +20,9 @@ struct New_player{
 	int level = 1;
 	int max_xp = level*50;
 	int current_xp = 0;
-	int hp = 50, ad = 10, bp = 1;
-	int cp = 0, debuff = 0;
+	int HP = 50, AD = 10//, BP = 1;
+	int BP = 10
+	int CP = 0;
 };
 struct Usernames{
 	string user[MAXUSERS];
