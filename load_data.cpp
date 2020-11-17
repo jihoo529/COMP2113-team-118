@@ -3,7 +3,7 @@
 #include "load_data.h"
 using namespace std;
 
-void load_data(int current_player, string* username, int* level, int* max_xp, int* current_xp, int* hp, int* ad, int* bp, int* cp, int* debuff){
+void load_data(int current_player, string* username, int* level, int* max_xp, int* current_xp, int* hp, int* ad, int* bp, int* cp){
 	ifstream fin;
 	string line;
 	fin.open("game_users.txt");
@@ -34,10 +34,7 @@ void load_data(int current_player, string* username, int* level, int* max_xp, in
 			index = line.find(" ");
 			bp = line.substr(0, index);
 			line = line.erase(0, index);
-			index = line.find(" ");
-			cp = line.substr(0, index);
-			line = line.erase(0 , index);
-			debuff = line;
+			cp = line;
 		}
 	}
 	fin.close();
