@@ -20,8 +20,8 @@ struct New_player{
 	int level = 1;
 	int max_xp = level*50;
 	int current_xp = 0;
-	int HP = 50, AD = 10//, BP = 1;
-	int BP = 10
+	int HP = 50, AD = 10;//, BP = 1;
+	int BP = 10;
 	int CP = 0;
 };
 struct Usernames{
