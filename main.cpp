@@ -5,11 +5,11 @@
 #include "load_name.h"
 using namespace std;
 
-const MAXHP = 10000;
-const MAXAD = 10000;
-const MAXBP = 40;
-const MAXLEVEL = 100;
-const MAXUSERS = 5;
+const int MAXHP = 10000;
+const int MAXAD = 10000;
+const int MAXBP = 40;
+const int MAXLEVEL = 100;
+const int MAXUSERS = 5;
 
 struct Player{
 	int level, max_xp, current_xp, hp, ad, bp, cp;
@@ -22,8 +22,8 @@ struct New_player{
 	int level = 1;
 	int max_xp = level*50;
 	int current_xp = 0;
-	int hp = 50, ad = 10, bp = 1;
-	int cp = 0, debuff = 0;
+	int hp = 50, ad = 10, bp = 5;
+	int cp = 0;
 };
 struct Usernames{
 	string user[MAXUSERS];
@@ -68,7 +68,6 @@ int main(){
 				data.play.ad = initial.ad;
 				data.play.bp = initial.bp;
 				data.play.cp = initial.cp;
-				data.play.debuff = initial.debuff;
 				current_player = user.num;
 				++user.num;
 				run = 0;
