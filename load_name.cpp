@@ -14,4 +14,5 @@ void load_name(string* user){
 		int index = line.find(" ");
 		user[i] = line.substr(0, index);
 	}
+	fin.close();
 }
