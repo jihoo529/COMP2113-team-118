@@ -2,7 +2,7 @@
 #include "new_user.h"
 using namespace std;
 
-void new_user(Usernames* user, Game_data* data, New_player initial){
+void new_user(Usernames* user, Game_data* data, New_player initial, string newname){
 	bool run = 1;
 	while(run == 1){
 		int count = 0;
