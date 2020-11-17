@@ -32,7 +32,7 @@ struct Usernames{
 	int num = 0;
 };
 
-void save_data();
+\\ void save_data();
 
 int main(){
 	ofstream fout;
