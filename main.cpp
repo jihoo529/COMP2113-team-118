@@ -3,6 +3,7 @@
 #include <fstream>
 #include "load_data.h"
 #include "load_name.h"
+#include "new_user.h"
 #include "tutorial.h"
 using namespace std;
 
