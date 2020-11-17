@@ -3,6 +3,7 @@
 #include <fstream>
 #include "load_data.h"
 #include "load_name.h"
+#include "tutorial.h"
 using namespace std;
 
 const int MAXHP = 10000;
@@ -28,10 +29,9 @@ struct New_player{
 struct Usernames{
 	string user[MAXUSERS];
 	int num = 0;
-}
+};
 
 void save_data();
-void tutorial();
 
 int main(){
 	ofstream fout;
