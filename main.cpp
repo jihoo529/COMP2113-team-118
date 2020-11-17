@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include "load_data.h"
 using namespace std;
 const MAXHP = 10000;
 const MAXAD = 10000;
@@ -21,18 +22,22 @@ struct New_player{
 	int hp = 50, ad = 10, bp = 1;
 	int cp = 0, debuff = 0;
 };
+struct Usernames{
+	string user[MAXUSERS];
+}
 
-void load_data(string* username, int* level, int* max_xp, int* current_xp, int* hp, int* ad, int* bp, int* cp, int* debuff);
 void save_data();
 string check_name();
+string load_name();
 
 int main(){
 	ofstream fout;
 	ifstream fin;
-	Game_data data[MAXUSERS];
+	Usernames user;
+	Game_data data;
 	cout << "Welcome to Dungeon" << endl;
 	cout << "[1] New Player [2] Continue" << endl;
-	load_data(&data[0].username, &data[0].play.level, &data[0].play.max_xp, &data[0].play.current_xp, &data[0].play.hp, &data[0].play.ad, &data[0].play.bp, &data[0].play.cp, &data[0].play.debuff);
+	load_name(*user.user[0]);
 	int sel = 0;
 	cin >> sel;
 	if(sel == 1){
@@ -53,44 +58,10 @@ int main(){
 				break;
 			}
 		}
-
 	}
-
-}
-
-void load_data(string* username, int* level, int* max_xp, int* current_xp, int* hp, int* ad, int* bp, int* cp, int* debuff){
-	ifstream fin;
-	string line;
-	fin.open("game_users.txt");
-	if(fin.fail()){
-		exit(1);
+	else if(sel == 2){
+		check_name(*user.);
 	}
-	for(int i=0; i<MAXUSERS; ++i){
-		getline(fin, line);
-		int index = line.find(" ");
-		username[i] = line.substr(0, index);
-		line = line.erase(0, index);
-		index = line.find(" ");
-		level[i] = line.substr(0, index);
-		line = line.erase(0, index);
-		index = line.find(" ");
-		max_xp[i] = line.substr(0, index);
-		line = line.erase(0, index);
-		index = line.find(" ");
-		current_xp[i] = line.substr(0, index);
-		line = line.erase(0, index);
-		index = line.find(" ");
-		hp[i] = line.substr(0, index);
-		line = line.erase(0, index);
-		index = line.find(" ");
-		ad[i] = line.substr(0, index);
-		line = line.erase(0, index);
-		index = line.find(" ");
-		bp[i] = line.substr(0, index);
-		line = line.erase(0, index);
-		index = line.find(" ");
-		cp[i] = line.substr(0, index);
-		line = line.erase(0 , index);
-		debuff[i] = line;
-	}
+	load_data(&data.username, &data.play.level, &data.play.max_xp, &data.play.current_xp, &data.play.hp, &data.play.ad, &data.play.bp, &data.play.cp, &data.play.debuff);
+
 }
