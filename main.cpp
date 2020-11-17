@@ -58,6 +58,6 @@ int main(){
 				break;
 			}
 		}
-		load_data(current_player, &data.username, &data.play.level, &data.play.max_xp, &data.play.current_xp, &data.play.hp, &data.play.ad, &data.play.bp, &data.play.cp);
+		load_data(current_player, &data);
 	}
 }
