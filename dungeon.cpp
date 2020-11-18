@@ -163,7 +163,7 @@ void dungeon(Game_data* data, int* location){
 	}
 	else if(win == 0){
 		location = 1;
-		village(Game_data* data, int* location);
+		village(&data, &location);
 	}
 }
 
