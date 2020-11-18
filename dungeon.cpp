@@ -10,24 +10,28 @@ using namespace std;
 
 
 void dungeon(Game_data* data, int* location){
-	//sponMon(); //spnMon has 2 arguments, monLv and monBP (monBP is between 0 and 1)
 	srand(time(0));
-	/*int hp = 100;
->>>>>>> 9343745a12483463d5828a040ec72a6525c348ef
-	int ad = 20;
-	int bp = 30;
-	double xp = 50;
-	int cp = 30;
-	int monAD = 30;
-	int monHP = 80;
-<<<<<<< HEAD
-
-	int monBP = 40;*/
-
+	int monAD; int monHP; int monBP;
+	int mon = random() % 10;
+	if(0 <= mon && mon <= 5){
+		monAD = 0.8 * data.play.ad;
+		monHP = 0.8 * data.play.hp;
+		monBP = 0.8 * data.play.bp;
+	}
+	else if(5 < mon && 9 > mon){
+		monAD = data.play.ad;
+		monHP = data.play.hp;
+		monBP = data.play.bp;
+	}
+	else if(mon == 9){
+		monAD = 1.2 * data.play.ad;
+		monHP = 1.2 * data.play.hp;
+		monBP = 1.2 * data.play.bp;
+	}
+		
  	int turn = random() % 10;
 	//int totalHP = stat[INDEX];//totalHP = initial HP 
 	//int totHP = data.hp;
-	int monBP = 40;
 
  	int turn = random() % 10;
 	//int totalHP = stat[INDEX];//totalHP = initial HP 
