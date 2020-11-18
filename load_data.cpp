@@ -37,7 +37,10 @@ void load_data(int current_player, Game_data* data){
 			index = line.find(" ");
 			data.play.bp = line.substr(0, index);
 			line = line.erase(0, index);
-			data.play.cp = line;
+			index = line.find(" ");
+			data.play.cp = line.substr(0, index);
+			line = line.erase(0, index);
+			data.play.money = line;
 		}
 	}
 	fin.close();
