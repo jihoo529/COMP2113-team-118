@@ -4,7 +4,7 @@
 #include "save_data.h"
 using namespace std;
 
-void save_data(Game_data data, int* location){
+void save_data(Game_data* data, int* location){
 	ifstream fin;
 	ofstream fout;
 	int total_player=0;
