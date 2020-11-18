@@ -52,7 +52,7 @@ void dungeon(Game_data* data, int* location){
 		cout << "[HP] " << data.play.hp << " / " << data.play.totalHP << endl;
 		cout << "[Enemy] " << monHP << " / " << totalmonHP << endl;
 		int input;
-		double winXP = xp * 0.25; float prob;
+		int winXP = 10; float prob;
 		if(turn == 1){
 			cout << endl;
 			cout << "What will you do ?" << endl;
@@ -134,7 +134,7 @@ void dungeon(Game_data* data, int* location){
 			cout << "ENEMY: [HP] 0 / " << totalmonHP << endl;
 			cout << "You defeated the monster!" << endl;
 			cout << winXP << " xp gained !" << endl;
-			xp += winXP;
+			data.play.xp += winXP;
 			run = 0;
 			win = 1;
 		}
