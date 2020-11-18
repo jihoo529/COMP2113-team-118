@@ -65,6 +65,7 @@ int main(){
 	int sel = 0;
 	cin >> sel;
 	if(sel == 1){
+		New_player initial;
 		new_user(&user, &data, initial);
 		tutorial();
 	}
