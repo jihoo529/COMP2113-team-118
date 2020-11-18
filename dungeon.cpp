@@ -11,22 +11,26 @@ using namespace std;
 
 void dungeon(Game_data* data, int* location){
 	srand(time(0));
-	int monAD; int monHP; int monBP;
+	int monAD; int monHP; int monBP; int gold;
 	int mon = random() % 10;
 	if(0 <= mon && mon <= 5){
 		monAD = 0.8 * data.play.ad;
 		monHP = 0.8 * data.play.hp;
 		monBP = 0.8 * data.play.bp;
+		gold = 20;
+		
 	}
 	else if(5 < mon && 9 > mon){
 		monAD = data.play.ad;
 		monHP = data.play.hp;
 		monBP = data.play.bp;
+		gold = 30;
 	}
 	else if(mon == 9){
 		monAD = 1.2 * data.play.ad;
 		monHP = 1.2 * data.play.hp;
 		monBP = 1.2 * data.play.bp;
+		gold = 50;
 	}
 		
  	int turn = random() % 10;
@@ -124,7 +128,8 @@ void dungeon(Game_data* data, int* location){
 			cout << "ENEMY: [HP] " << monHP << " / " << totalmonHP << endl;
 			cout << "....." << endl;
 			cout << "You seriously injured... heading back to village" << endl;
-			
+			cout << "You lost " << gold << " golds..." << endl;
+			data.play.money -= gold;
 			run = 0;
 			win = 0;
 		}
@@ -134,6 +139,8 @@ void dungeon(Game_data* data, int* location){
 			cout << "ENEMY: [HP] 0 / " << totalmonHP << endl;
 			cout << "You defeated the monster!" << endl;
 			cout << winXP << " xp gained !" << endl;
+			cout << gold << " gained !" << endl;
+			data.play.money += gold;
 			data.play.xp += winXP;
 			run = 0;
 			win = 1;
