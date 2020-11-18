@@ -1,5 +1,6 @@
 #include <iostream>
 #include <ifstream>
+#include "load_name.h"
 using namespace std;
 
 void load_name(string* user, int* num){
