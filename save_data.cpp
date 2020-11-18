@@ -10,7 +10,7 @@ void save_data(Game_data* data, int* location){
 	int total_player=0;
 	int player=0;
 	string line;
-	fin.open("game_memory.txt");
+	fin.open("game_users.txt");
 	if(fin.fail()){
 		cout << "There was a problem in accessing the game memory (1)" << endl;
 		exit(1);
@@ -42,7 +42,7 @@ void save_data(Game_data* data, int* location){
 		getline(fin, text[i]);
 	}
 	fin.close();
-	fout.open("game_memory.txt");
+	fout.open("game_users.txt");
 	if(fout.fail()){
 		cout << "There was a problem in accessing the game memory (2)" << endl;
 		exit(1);
