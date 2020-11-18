@@ -4,7 +4,7 @@
 #include "save_data.h"
 using namespace std;
 
-void save_data(Game_data* data, int* location){
+void save_data(Game_data data, int* location){
 	ifstream fin;
 	ofstream fout;
 	int total_player=0;
@@ -51,4 +51,12 @@ void save_data(Game_data* data, int* location){
 		fout << text[i] << endl;
 	}
 	fout.close();
+	cout << "Continue? [1] Yes [2] Quit" << endl;
+	int sel = 0;
+	if(sel == 1){
+		location = 1;
+	}
+	else if(sel == 2){
+		location = 0;
+	}
 }
