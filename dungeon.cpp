@@ -8,22 +8,19 @@ using namespace std;
 //const stat[] = { }
 
 
+
 void dungeon(Game_data* data, int* location){
 	//sponMon(); //spnMon has 2 arguments, monLv and monBP (monBP is between 0 and 1)
 	srand(time(0));
 	/*int hp = 100;
-=======
-int main(/*double &stat[]*/){
-	//sponMon(); //spnMon has 2 arguments, monLv and monBP (monBP is between 0 and 1)
-	srand(time(0));
-	int hp = 100;
-
+>>>>>>> 9343745a12483463d5828a040ec72a6525c348ef
 	int ad = 20;
 	int bp = 30;
 	double xp = 50;
 	int cp = 30;
 	int monAD = 30;
 	int monHP = 80;
+<<<<<<< HEAD
 
 	int monBP = 40;*/
 
@@ -48,11 +45,7 @@ int main(/*double &stat[]*/){
 	while(run == 1){
 		srand(time(0));
 		std::system("clear");
-
 		cout << "[HP] " << data.play.hp << " / " << data.play.totalHP << endl;
-
-		cout << "[HP] " << hp << " / " << totalHP << endl;
->>>>>>> a0531bb793dc23eb3c3b9a05ba4fb90adfbecb8b
 		cout << "[Enemy] " << monHP << " / " << totalmonHP << endl;
 		int input;
 		double winXP = xp * 0.25; float prob;
@@ -69,21 +62,12 @@ int main(/*double &stat[]*/){
 				}
 				else{
 					prob = rand() % 100; 
-<<<<<<< HEAD
 					if(prob < data.play.cp){
 						damage = data.play.ad * 2; // calculating critical damage
 						cout << "Critical HIT !!" << endl;
 					}
 					else{
 						damage = data.play.ad;
-=======
-					if(prob < cp){
-						damage = ad * 2; // calculating critical damage
-						cout << "Critical HIT !!" << endl;
-					}
-					else{
-						damage = ad;
->>>>>>> a0531bb793dc23eb3c3b9a05ba4fb90adfbecb8b
 					}
 
 					cout << damage << " damage dealt !" << endl;
@@ -92,13 +76,8 @@ int main(/*double &stat[]*/){
 				}
 			}
 			else if(input == 2){
-<<<<<<< HEAD
 				cout << (data.play.totalHP-data.play.hp) *0.5 << " healed !" << endl;
 				data.play.hp = (data.play.totalHP - data.play.hp)*0.5 + data.play.hp ; //Reset HP
-=======
-				cout << (totalHP-hp) *0.5 << " healed !" << endl;
-				hp = (totalHP - hp)*0.5 + hp ; //Reset HP
->>>>>>> a0531bb793dc23eb3c3b9a05ba4fb90adfbecb8b
 			}
 			turn = 0;
 			sleep(2);
@@ -115,11 +94,8 @@ int main(/*double &stat[]*/){
 				monDamage = monAD;
 			}
 			prob = rand() % 100;
-<<<<<<< HEAD
+
 			if(prob < data.play.bp){
-=======
-			if(prob < bp){
->>>>>>> a0531bb793dc23eb3c3b9a05ba4fb90adfbecb8b
 					cout << "Blocked enemy's attack !" << endl;
 			}else{
 				if(ult % 3 == 0){
@@ -128,15 +104,9 @@ int main(/*double &stat[]*/){
 				}else{
 					cout << "Damaged by " << monDamage <<"!"<< endl;
 				}
-<<<<<<< HEAD
 				data.play.hp = data.play.hp - monDamage;
-=======
-				hp = hp - monDamage;
->>>>>>> a0531bb793dc23eb3c3b9a05ba4fb90adfbecb8b
 				//cout << "[HP] " << HP << " / " << totalHP << endl;
 			}
-			
-			
 			
 			ult += 1;
 			turn = 1;
@@ -144,9 +114,8 @@ int main(/*double &stat[]*/){
 		}
 		//sleep(2);
 
-		if(hp <= 0){
+		if(data.play.hp <= 0){
 			std::system("clear");
-<<<<<<< HEAD
 			cout << "YOU: [HP] 0 / " << data.play.totalHP << endl;
 			cout << "ENEMY: [HP] " << monHP << " / " << totalmonHP << endl;
 			cout << "....." << endl;
@@ -185,31 +154,8 @@ int main(/*double &stat[]*/){
 		location = 1;
 		village(Game_data* data, int* location);
 	}
-
-=======
-			cout << "YOU: [HP] 0 / " << totalHP << endl;
-			cout << "ENEMY: [HP] " << monHP << " / " << totalmonHP << endl;
-			cout << "....." << endl;
-			cout << "You seriously injured... heading back to village" << endl;
-
-			win = 0;
-			run = 0;
-		}
-		if(monHP <= 0){
-			std::system("clear");
-			cout << "YOU: [HP] " << hp << " / " << totalHP << endl;
-			cout << "ENEMY: [HP] 0 / " << totalmonHP << endl;
-			cout << "You defeated the monster!" << endl;
-			cout << winXP << " xp gained !" << endl;
-			XP += winXP;
-			win = 1;
-			run = 0;
-		}
-		
-	}
-
-	cout << "game ended " << endl;
-	return win;
->>>>>>> a0531bb793dc23eb3c3b9a05ba4fb90adfbecb8b
-	
 }
+
+
+
+
