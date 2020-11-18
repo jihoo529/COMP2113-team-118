@@ -16,7 +16,7 @@ const int MAXBP = 40;
 const int MAXLEVEL = 100;
 
 struct Player{
-	int level, max_xp, current_xp, totalHP, hp, ad, bp, cp;
+	int level, max_xp, current_xp, totalHP, hp, ad, bp, cp, money;
 };
 struct Game_data{
 	string username;
@@ -28,6 +28,7 @@ struct New_player{
 	int current_xp = 0;
 	int totalHP = 50, hp = 50, ad = 10, bp = 5;
 	int cp = 0;
+	int money = 100;
 };
 struct Usernames{
 	string user[5];
@@ -36,7 +37,7 @@ struct Usernames{
 	\\ string user[num];
 };
 
-\\ void save_data(Gace_data* data, int* location, int current_player);
+\\ void save_data(Gace_data* data, int* location);
 \\ void village(Game_data* data, int* location);
 \\ void store(Game_data* data, int* location);
 \\ void dungeon(Game_data* data, int* location);
@@ -67,4 +68,5 @@ int main(){
 		else if(location == 2){store(&data, &location);}
 		else if(location == 3){dungeon(&data, &location);}
 	}
+	cout << "Game quit... See you next time!" << endl;
 }

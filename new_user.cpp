@@ -26,6 +26,7 @@ void new_user(Usernames* user, Game_data* data, New_player initial){
 			data.play.ad = initial.ad;
 			data.play.bp = initial.bp;
 			data.play.cp = initial.cp;
+			data.play.money = initial.money;
 			current_player = user.num;
 			++user.num;
 			run = 0;
