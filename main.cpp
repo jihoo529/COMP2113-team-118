@@ -31,10 +31,8 @@ struct New_player{
 	int money = 100;
 };
 struct Usernames{
-	string user[5];
 	int num = 0;
-	\\ int num = 0;
-	\\ string user[num];
+	string *user = new string [num];
 };
 
 \\ void save_data(Gace_data* data, int* location);
@@ -48,7 +46,22 @@ int main(){
 	int current_player = -1;
 	cout << "Welcome to Dungeon" << endl;
 	cout << "[1] New Player [2] Continue" << endl;
-	load_name(*user.user[0], *user.num);
+	ifstream fin;
+	string line;
+	fin.open("game_users.txt");
+	if(fin.fail()){exit(1);}
+	while(getline(fin, line)){
+		int index = line.find(" ");
+		string p = line.substr(0, index);
+		string temp = new string [user.num + 1];
+		for(int i = 0; i<user.num; ++i){
+			temp[i] = user.user[i];
+		}
+		temp[user.num] = p;
+		++user.num;
+		user.user = temp;
+		delete[] temp;
+	}
 	int sel = 0;
 	cin >> sel;
 	if(sel == 1){
