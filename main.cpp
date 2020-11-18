@@ -36,7 +36,7 @@ struct Usernames{
 	\\ string user[num];
 };
 
-\\ void save_data();
+\\ void save_data(Gace_data* data, int* location);
 \\ void village(Game_data* data, int* location);
 \\ void store(Game_data* data, int* location);
 \\ void dungeon(Game_data* data, int* location);
