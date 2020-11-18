@@ -17,7 +17,6 @@ void new_user(Usernames* user, Game_data* data, New_player initial){
 			else{++count;}
 		}
 		if(user.num == count){
-			New_player initial;
 			user.user[user.num] = newname;
 			data.username = user.user[user.num];
 			data.play.level = initial.level;
