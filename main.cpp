@@ -42,8 +42,6 @@ struct Usernames{
 \\ void dungeon(Game_data* data, int* location);
 
 int main(){
-	ofstream fout;
-	ifstream fin;
 	Usernames user;
 	Game_data data;
 	int current_player = -1;
