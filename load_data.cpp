@@ -1,47 +1,48 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 #include "load_data.h"
 #include "common.h"
 using namespace std;
 
-void load_data(int current_player, Game_data* data){
+void load_data(int current_player, Usernames user, Game_data* data){
 	ifstream fin;
 	string line;
 	fin.open("game_users.txt");
 	if(fin.fail()){
 		exit(1);
 	}
-	for(int i=0; i<MAXUSERS; ++i){
+	for(int i=0; i<users.num; ++i){
 		if(i == current_player){
 			getline(fin, line);
 			int index = line.find(" ");
-			data->username = line.substr(0, index);
+			data->username = std::stoi(line.substr(0, index));
 			line = line.erase(0, index);
 			index = line.find(" ");
-			data->play.level = line.substr(0, index);
+			data->play.level = std::stoi(line.substr(0, index));
 			line = line.erase(0, index);
 			index = line.find(" ");
-			data->play.max_xp = line.substr(0, index);
+			data->play.max_xp = std::stoi(line.substr(0, index));
 			line = line.erase(0, index);
 			index = line.find(" ");
-			data->play.current_xp = line.substr(0, index);
+			data->play.current_xp = std::stoi(line.substr(0, index));
 			line = line.erase(0, index);
 			index = line.find(" ");
-			data->play.totalHP = line.substr(0, index);
+			data->play.totalHP = std::stoi(line.substr(0, index));
 			line = line.erase(0, index);
 			index = line.find(" ");
-			data->play.hp = line.substr(0, index);
+			data->play.hp = std::stoi(line.substr(0, index));
 			line = line.erase(0, index);
 			index = line.find(" ");
-			data->play.ad = line.substr(0, index);
+			data->play.ad = std::stoi(line.substr(0, index));
 			line = line.erase(0, index);
 			index = line.find(" ");
-			data->play.bp = line.substr(0, index);
+			data->play.bp = std::stoi(line.substr(0, index));
 			line = line.erase(0, index);
 			index = line.find(" ");
-			data->play.cp = line.substr(0, index);
+			data->play.cp = std::stoi(line.substr(0, index));
 			line = line.erase(0, index);
-			data->play.money = line;
+			data->play.money = std::stoi(line);
 		}
 	}
 	fin.close();
