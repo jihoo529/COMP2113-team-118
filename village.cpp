@@ -2,9 +2,11 @@
 #include <fstream>
 #include "village.h"
 #include "save_data.h"
+#include "common.h"
 using namespace std;
 
 //struct Game_data;
+Game_data data;
 
 void village(Game_data* data, int* location){
 	ofstream fout;
@@ -15,7 +17,7 @@ void village(Game_data* data, int* location){
 	if(sel == 1){location[0] = 2;}
 	else if(sel == 2){location[0] = 3;}
 	else if(sel == 3){
-		data->play.hp = data->play.totalHP;
+		data.play.hp = data.play.totalHP;
 		cout << "Healed... [HP] " << data->play.hp << " / " << data->play.totalHP << endl;
 	}
 	else if(sel == 4){
