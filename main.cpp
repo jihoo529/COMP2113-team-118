@@ -102,7 +102,7 @@ int main(){
 			cout << "[" << i << "]" << user.user[i] << endl;
 		}
 		cin >> current_player;
-		load_data(current_player, user, data);
+		load_data(current_player, user, &data);
 	}
 	int location = 1;
 	while(location != 0){
