@@ -56,7 +56,7 @@ void dungeon(Game_data* data, int* location){
 		cout << "[HP] " << data.play.hp << " / " << data.play.totalHP << endl;
 		cout << "[Enemy] " << monHP << " / " << totalmonHP << endl;
 		int input;
-		int winXP = 10; float prob;
+		int winXP = 25; float prob;
 		if(turn == 1){
 			cout << endl;
 			cout << "What will you do ?" << endl;
@@ -141,7 +141,12 @@ void dungeon(Game_data* data, int* location){
 			cout << winXP << " xp gained !" << endl;
 			cout << gold << " gained !" << endl;
 			data.play.money += gold;
-			data.play.xp += winXP;
+			//level up
+			if(data.play.current_xp + winXP > data.play.max_xp){
+				data.play.current_xp = data.play.current_xp + winXP - data.play.max_xp;
+				data.play.level ++;
+				cout << "Level up ! Level : " << data.play.level << endl;
+			}
 			run = 0;
 			win = 1;
 		}
