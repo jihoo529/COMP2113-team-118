@@ -7,13 +7,14 @@
 #include "village.h"
 #include "store.h"
 #include "dungeon.h"
+#include "common.h"
 using namespace std;
 
 const int MAXHP = 10000;
 const int MAXAD = 10000;
 const int MAXBP = 40;
 const int MAXLEVEL = 100;
-
+/*
 struct Player{
 	int level, max_xp, current_xp, totalHP, hp, ad, bp, cp, money;
 };
@@ -33,7 +34,7 @@ struct Usernames{
 	int num = 0;
 	string *user = new string [num];
 };
-
+*/
 void tutorial(){
 	int run = 1;
 	while(run == 1){
