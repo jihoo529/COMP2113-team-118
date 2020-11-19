@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <unistd.h>
 #include "load_data.h"
-#include "load_name.h"
 #include "new_user.h"
 #include "village.h"
 #include "store.h"
@@ -33,9 +33,6 @@ struct Usernames{
 	int num = 0;
 	string *user = new string [num];
 };
-#include <iostream>
-#include <unistd.h>
-using namespace std;
 
 void tutorial(){
 	int run = 1;
