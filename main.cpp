@@ -87,14 +87,14 @@ int main(){
 		}
 		temp[user.num] = p;
 		++user.num;
-		user.user = &temp;
+		user.user = temp;
 		delete[] &temp;
 	}
 	int sel = 0;
 	cin >> sel;
 	if(sel == 1){
 		New_player initial;
-		new_user(&user, &data, &current_player, initial);
+		new_user(user, data, current_player, initial);
 		tutorial();
 	}
 	else if(sel == 2){
@@ -102,7 +102,7 @@ int main(){
 			cout << "[" << i << "]" << user.user[i] << endl;
 		}
 		cin >> current_player;
-		load_data(current_player, data);
+		load_data(current_player, user, data);
 	}
 	location[0] = 1;
 	while(location != 0){
