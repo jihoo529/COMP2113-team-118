@@ -1,6 +1,6 @@
 #ifndef COMMON_H
 #define COMMON_H
-
+#include <string>
 struct Player{
 	int level, max_xp, current_xp, totalHP, hp, ad, bp, cp, money;
 };
