@@ -8,6 +8,7 @@
 #include "store.h"
 #include "dungeon.h"
 #include "common.h"
+#include "save_data.h"
 using namespace std;
 
 const int MAXHP = 10000;
@@ -106,7 +107,7 @@ int main(){
 	}
 	int location = 1;
 	while(location != 0){
-		//if(location == 1){village(&data, &location);}
+		if(location == 1){village(&data, &location);}
 		if(location == 2){store(&data, &location);}
 		else if(location == 3){dungeon(&data, &location);}
 	}
