@@ -1,14 +1,8 @@
 #ifndef DUNGEON_H
 #define DUNGEON_H
+#include "common.h"
 
-struct Game_data;
 
-class Dungeon{
- 
-private:
-  
-public:
-  void dungeon(Game_data* data, int* location);
-};
+void dungeon(Game_data* data, int* location);
 
 #endif
