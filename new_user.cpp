@@ -7,7 +7,7 @@ using namespace std;
 Usernames user;
 Game_data data;
 New_player initial;
-int* current_player;
+int current_player;
 
 void new_user(Usernames* user, Game_data* data, int* current_player, New_player initial){
 	cout << "Username : " << endl;
@@ -33,7 +33,7 @@ void new_user(Usernames* user, Game_data* data, int* current_player, New_player 
 			data->play.bp = initial.bp;
 			data->play.cp = initial.cp;
 			data->play.money = initial.money;
-			current_player = user->num;
+			current_player[0] = user->num;
 			++user->num;
 			run = 0;
 		}
