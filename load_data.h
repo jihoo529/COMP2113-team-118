@@ -4,6 +4,6 @@
 
 #include "common.h"
 
-void load_data(int current_player, std::string* username, int* level, int* max_xp, int* current_xp, int* hp, int* ad, int* bp, int* cp);
+void load_data(int current_player, Usernames user, Game_data* data);
 
 #endif
