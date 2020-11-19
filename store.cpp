@@ -1,8 +1,9 @@
 #include <iostream>
 #include <unistd.h>
+#include "store.h"
 using namespace std;
 
-void store(/*Game_data* data, int* location*/){
+void store(Game_data* data, int* location){
 	//Game_data data
 	int money = 1000;
 	int run = 1;
