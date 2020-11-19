@@ -10,8 +10,8 @@ void village(Game_data* data, int* location){
 	cout << "Welcome to village" << endl;
 	cout << "Village : [1] Go to store [2] Go to dungeon [3] Heal HP [4] Save" << endl;
 	cin >> sel;
-	if(sel == 1){location = 2;}
-	else if(sel == 2){location = 3;}
+	if(sel == 1){location[0] = 2;}
+	else if(sel == 2){location[0] = 3;}
 	else if(sel == 3){
 		hp = totalHP;
 		cout << "Healed... [HP] " << hp << " / " << totalHP << endl;
