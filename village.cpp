@@ -7,7 +7,7 @@
 using namespace std;
 
 //struct Game_data;
-Game_data data;
+//Game_data data;
 
 void village(Game_data* data, int* location){
 	ofstream fout;
