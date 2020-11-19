@@ -4,7 +4,7 @@
 #include "save_data.h"
 using namespace std;
 
-struct Game_data;
+//struct Game_data;
 
 void village(Game_data* data, int* location){
 	ofstream fout;
