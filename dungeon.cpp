@@ -14,35 +14,10 @@ using namespace std;
 
 void dungeon(Game_data* data, int* location){
 	srand(time(0));
-	int monAD; int monHP; int monBP; int gold;
-	int mon = random() % 10;
-	if(0 <= mon && mon <= 5){
-		monAD = 0.8 * data->play.ad;
-		monHP = 0.8 * data->play.hp;
-		monBP = 0.8 * data->play.bp;
-		gold = 20;
-		
-	}
-	else if(5 < mon && 9 > mon){
-		monAD = data->play.ad;
-		monHP = data->play.hp;
-		monBP = data->play.bp;
-		gold = 30;
-	}
-	else if(mon == 9){
-		monAD = 1.2 * data->play.ad;
-		monHP = 1.2 * data->play.hp;
-		monBP = 1.2 * data->play.bp;
-		gold = 50;
-	}
 		
  	int turn = random() % 10;
 	//int totalHP = stat[INDEX];//totalHP = initial HP 
 	//int totHP = data.hp;
-
- 	int turn = random() % 10;
-	//int totalHP = stat[INDEX];//totalHP = initial HP 
-	//int totalHP = data->play.hp;
 
 	int totalmonHP = monHP;
 	int win;
@@ -55,6 +30,27 @@ void dungeon(Game_data* data, int* location){
 	int damage;
 	while(run == 1){
 		srand(time(0));
+		int monAD; int monHP; int monBP; int gold;
+		int mon = random() % 10;
+		if(0 <= mon && mon <= 5){
+			monAD = 0.8 * data->play.ad;
+			monHP = 0.8 * data->play.hp;
+			monBP = 0.8 * data->play.bp;
+			gold = 20;
+
+		}
+		else if(5 < mon && 9 > mon){
+			monAD = data->play.ad;
+			monHP = data->play.hp;
+			monBP = data->play.bp;
+			gold = 30;
+		}
+		else if(mon == 9){
+			monAD = 1.2 * data->play.ad;
+			monHP = 1.2 * data->play.hp;
+			monBP = 1.2 * data->play.bp;
+			gold = 50;
+		}
 		std::system("clear");
 		cout << "[HP] " << data->play.hp << " / " << data->play.totalHP << endl;
 		cout << "[Enemy] " << monHP << " / " << totalmonHP << endl;
@@ -153,26 +149,29 @@ void dungeon(Game_data* data, int* location){
 			run = 0;
 			win = 1;
 		}
-		
-	}
-	if(win == 1){
-		cout << "Continue with dungeon ?" << endl;
-		int input;
-		cout << "1.Yes 2.No" << endl;
-		cin >> input;
-		if(input == 1){
-			location[0] = 2;
-			dungeon(&data, &location);
+		if(win == 1){
+			cout << "Continue with dungeon ?" << endl;
+			int input;
+			cout << "1.Yes 2.No" << endl;
+			cin >> input;
+			if(input == 1){
+				location[0] = 2;
+				continue;
+				
+			}
+			else if(input == 2){
+				location[0] = 1;
+				cout << "Returning to village ... " << endl;
+				run = 0;
+			}
 		}
-		else if(input == 2){
+		else if(win == 0){
 			location[0] = 1;
-			cout << "Returning to village ... " << endl;
-			village(&data, &location);
+			run = 0;
 		}
-	}
-	else if(win == 0){
-		location[0] = 1;
-	}
+		
+	}//end of while (run == 1) loop
+	
 }
 
 
