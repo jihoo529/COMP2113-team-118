@@ -19,7 +19,7 @@ void dungeon(Game_data* data, int* location){
 	//int totalHP = stat[INDEX];//totalHP = initial HP 
 	//int totHP = data.hp;
 
-	int totalmonHP = monHP;
+	
 	int win;
 	if(turn >= 5){
 		turn = 1;
@@ -51,6 +51,7 @@ void dungeon(Game_data* data, int* location){
 			monBP = 1.2 * data->play.bp;
 			gold = 50;
 		}
+		int totalmonHP = monHP;
 		std::system("clear");
 		cout << "[HP] " << data->play.hp << " / " << data->play.totalHP << endl;
 		cout << "[Enemy] " << monHP << " / " << totalmonHP << endl;
