@@ -7,7 +7,7 @@ class Village{
 
 private:
   
-publc:
+public:
   void village(Game_data* data, int* location);
 };
 
