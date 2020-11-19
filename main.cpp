@@ -63,10 +63,10 @@ void tutorial(){
 	
 }
 
-\\ void save_data(Gace_data* data, int* location);
+/* void save_data(Gace_data* data, int* location);
 \\ void village(Game_data* data, int* location);
 \\ void store(Game_data* data, int* location);
-\\ void dungeon(Game_data* data, int* location);
+\\ void dungeon(Game_data* data, int* location);*/
 
 int main(){
 	Usernames user;
@@ -81,14 +81,14 @@ int main(){
 	while(getline(fin, line)){
 		int index = line.find(" ");
 		string p = line.substr(0, index);
-		string temp = new string [user.num + 1];
+		string* temp = new string[user.num + 1];
 		for(int i = 0; i<user.num; ++i){
 			temp[i] = user.user[i];
 		}
 		temp[user.num] = p;
 		++user.num;
-		user.user = temp;
-		delete[] temp;
+		user.user = &temp;
+		delete[] &temp;
 	}
 	int sel = 0;
 	cin >> sel;
@@ -102,13 +102,13 @@ int main(){
 			cout << "[" << i << "]" << user.user[i] << endl;
 		}
 		cin >> current_player;
-		load_data(current_player, &data);
+		load_data(current_player, data);
 	}
-	int location = 1;
+	location[0] = 1;
 	while(location != 0){
-		if(location == 1){village(&data, &location);}
-		else if(location == 2){store(&data, &location);}
-		else if(location == 3){dungeon(&data, &location);}
+		if(location == 1){village(data, location);}
+		else if(location == 2){store(data, location);}
+		else if(location == 3){dungeon(data, location);}
 	}
 	cout << "Game quit... See you next time!" << endl;
 }
