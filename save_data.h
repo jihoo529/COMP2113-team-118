@@ -1,7 +1,7 @@
 #ifndef SAVE_DATA_H
 #define SAVE_DATA_H
 
-//struct Game_data;
+struct Game_data;
 
 class Save_data{
   
