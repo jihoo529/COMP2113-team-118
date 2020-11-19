@@ -21,7 +21,7 @@ struct New_player{
 
 struct Usernames{
 	int num = 0;
-	string *user = new string [num];
+	std::string *user = new string [num];
 };
 
 #endif
