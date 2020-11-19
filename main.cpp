@@ -11,7 +11,7 @@
 #include "save_data.h"
 using namespace std;
 
-void village(&data, &location);
+//void village(&data, &location);
 
 const int MAXHP = 10000;
 const int MAXAD = 10000;
