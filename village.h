@@ -3,7 +3,7 @@
 #include "save_data.h"
 #include "common.h"
 
-void vilage(Game_data* data, int* location);
+void village(Game_data* data, int* location);
 
 
 #endif
