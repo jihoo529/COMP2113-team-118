@@ -15,10 +15,10 @@ void village(Game_data* data, int* location){
 	if(sel == 1){location[0] = 2;}
 	else if(sel == 2){location[0] = 3;}
 	else if(sel == 3){
-		play.hp = play.totalHP;
-		cout << "Healed... [HP] " << play.hp << " / " << play.totalHP << endl;
+		data.play.hp = data.play.totalHP;
+		cout << "Healed... [HP] " << data.play.hp << " / " << data.play.totalHP << endl;
 	}
 	else if(sel == 4){
-		save_data(data, play, location);
+		save_data(&data, &location);
 	}
 }
