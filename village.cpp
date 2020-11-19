@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include "village.h"
+#include "save_data.h"
 using namespace std;
 
 void village(Game_data* data, int* location){
