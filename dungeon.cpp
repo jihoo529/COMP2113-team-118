@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include "dungeon.h"
 using namespace std;
 
 //const stat[] = { }
