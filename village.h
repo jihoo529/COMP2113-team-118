@@ -1,7 +1,7 @@
 #ifdef VILLAGE_H
 #define VILLAGE_H
 
-int location = 1;
+int location;
 struct Game_data;
 
 class Village{
