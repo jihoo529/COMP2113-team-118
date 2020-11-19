@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include "dungeon.h"
 using namespace std;
 
 //const stat[] = { }
@@ -168,7 +169,6 @@ void dungeon(Game_data* data, int* location){
 	}
 	else if(win == 0){
 		location = 1;
-		village(&data, &location);
 	}
 }
 
