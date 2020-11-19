@@ -102,13 +102,13 @@ int main(){
 			cout << "[" << i << "]" << user.user[i] << endl;
 		}
 		cin >> current_player;
-		load_data(current_player, &user, data);
+		load_data(current_player, user, data);
 	}
 	int location = 1;
 	while(location != 0){
-		if(location == 1){village(&data, location);}
-		else if(location == 2){store(&data, location);}
-		else if(location == 3){dungeon(&data, location);}
+		if(location == 1){village(&data, &location);}
+		else if(location == 2){store(&data, &location);}
+		else if(location == 3){dungeon(&data, &location);}
 	}
 	cout << "Game quit... See you next time!" << endl;
 }
