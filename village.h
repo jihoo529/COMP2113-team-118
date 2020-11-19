@@ -12,7 +12,7 @@ public:
   void village(Game_data* data, int* location);
 };
 */
-void vilalge(Game_data* data, int* location);
+void village(Game_data* data, int* location);
 
 
 #endif
