@@ -2,7 +2,7 @@
 #define SAVE_DATA_H
 
 //struct Game_data;
-void save_data(Game_data* data, int* location);
+void save_data();
 /*
 class Save_data{
   
