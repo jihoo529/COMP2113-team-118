@@ -94,7 +94,7 @@ int main(){
 	cin >> sel;
 	if(sel == 1){
 		New_player initial;
-		new_user(&user, &data, initial);
+		new_user(&user, &data, &current_player, initial);
 		tutorial();
 	}
 	else if(sel == 2){
