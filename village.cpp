@@ -4,7 +4,7 @@
 #include "save_data.h"
 using namespace std;
 
-void village(Game_data* data, Game_data* data.play, int* location){
+void village(Game_data* data, Game_data.play* play, int* location){
 	ofstream fout;
 	int sel = 0;
 	cout << "Welcome to village" << endl;
@@ -13,10 +13,10 @@ void village(Game_data* data, Game_data* data.play, int* location){
 	if(sel == 1){location[0] = 2;}
 	else if(sel == 2){location[0] = 3;}
 	else if(sel == 3){
-		data.play.hp = data.play.totalHP;
-		cout << "Healed... [HP] " << data.play.hp << " / " << data.play.totalHP << endl;
+		play.hp = play.totalHP;
+		cout << "Healed... [HP] " << play.hp << " / " << play.totalHP << endl;
 	}
 	else if(sel == 4){
-		save_data(data, data.play, location);
+		save_data(data, play, location);
 	}
 }
