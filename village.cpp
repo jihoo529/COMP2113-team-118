@@ -4,7 +4,9 @@
 #include "save_data.h"
 using namespace std;
 
-void village(Game_data* data, Game_data.play* play, int* location){
+struct Game_data;
+
+void village(Game_data* data, int* location){
 	ofstream fout;
 	int sel = 0;
 	cout << "Welcome to village" << endl;
