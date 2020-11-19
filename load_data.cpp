@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "load_data.h"
+#include "common.h"
 using namespace std;
 
 void load_data(int current_player, Game_data* data){
@@ -14,33 +15,33 @@ void load_data(int current_player, Game_data* data){
 		if(i == current_player){
 			getline(fin, line);
 			int index = line.find(" ");
-			data.username = line.substr(0, index);
+			data->username = line.substr(0, index);
 			line = line.erase(0, index);
 			index = line.find(" ");
-			data.play.level = line.substr(0, index);
+			data->play.level = line.substr(0, index);
 			line = line.erase(0, index);
 			index = line.find(" ");
-			data.play.max_xp = line.substr(0, index);
+			data->play.max_xp = line.substr(0, index);
 			line = line.erase(0, index);
 			index = line.find(" ");
-			data.play.current_xp = line.substr(0, index);
+			data->play.current_xp = line.substr(0, index);
 			line = line.erase(0, index);
 			index = line.find(" ");
-			data.play.totalHP = line.substr(0, index);
+			data->play.totalHP = line.substr(0, index);
 			line = line.erase(0, index);
 			index = line.find(" ");
-			data.play.hp = line.substr(0, index);
+			data->play.hp = line.substr(0, index);
 			line = line.erase(0, index);
 			index = line.find(" ");
-			data.play.ad = line.substr(0, index);
+			data->play.ad = line.substr(0, index);
 			line = line.erase(0, index);
 			index = line.find(" ");
-			data.play.bp = line.substr(0, index);
+			data->play.bp = line.substr(0, index);
 			line = line.erase(0, index);
 			index = line.find(" ");
-			data.play.cp = line.substr(0, index);
+			data->play.cp = line.substr(0, index);
 			line = line.erase(0, index);
-			data.play.money = line;
+			data->play.money = line;
 		}
 	}
 	fin.close();
