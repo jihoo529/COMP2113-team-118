@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "dungeon.h"
+#include "common.h"
+
 using namespace std;
 
 //const stat[] = { }
@@ -15,22 +17,22 @@ void dungeon(Game_data* data, int* location){
 	int monAD; int monHP; int monBP; int gold;
 	int mon = random() % 10;
 	if(0 <= mon && mon <= 5){
-		monAD = 0.8 * data.play.ad;
-		monHP = 0.8 * data.play.hp;
-		monBP = 0.8 * data.play.bp;
+		monAD = 0.8 * data->play.ad;
+		monHP = 0.8 * data->play.hp;
+		monBP = 0.8 * data->play.bp;
 		gold = 20;
 		
 	}
 	else if(5 < mon && 9 > mon){
-		monAD = data.play.ad;
-		monHP = data.play.hp;
-		monBP = data.play.bp;
+		monAD = data->play.ad;
+		monHP = data->play.hp;
+		monBP = data->play.bp;
 		gold = 30;
 	}
 	else if(mon == 9){
-		monAD = 1.2 * data.play.ad;
-		monHP = 1.2 * data.play.hp;
-		monBP = 1.2 * data.play.bp;
+		monAD = 1.2 * data->play.ad;
+		monHP = 1.2 * data->play.hp;
+		monBP = 1.2 * data->play.bp;
 		gold = 50;
 	}
 		
@@ -40,7 +42,7 @@ void dungeon(Game_data* data, int* location){
 
  	int turn = random() % 10;
 	//int totalHP = stat[INDEX];//totalHP = initial HP 
-	int totalHP = hp;
+	//int totalHP = data->play.hp;
 
 	int totalmonHP = monHP;
 	int win;
@@ -54,7 +56,7 @@ void dungeon(Game_data* data, int* location){
 	while(run == 1){
 		srand(time(0));
 		std::system("clear");
-		cout << "[HP] " << data.play.hp << " / " << data.play.totalHP << endl;
+		cout << "[HP] " << data->play.hp << " / " << data->play.totalHP << endl;
 		cout << "[Enemy] " << monHP << " / " << totalmonHP << endl;
 		int input;
 		int winXP = 25; float prob;
@@ -71,12 +73,12 @@ void dungeon(Game_data* data, int* location){
 				}
 				else{
 					prob = rand() % 100; 
-					if(prob < data.play.cp){
-						damage = data.play.ad * 2; // calculating critical damage
+					if(prob < data->play.cp){
+						damage = data->play.ad * 2; // calculating critical damage
 						cout << "Critical HIT !!" << endl;
 					}
 					else{
-						damage = data.play.ad;
+						damage = data->play.ad;
 					}
 
 					cout << damage << " damage dealt !" << endl;
@@ -85,8 +87,8 @@ void dungeon(Game_data* data, int* location){
 				}
 			}
 			else if(input == 2){
-				cout << (data.play.totalHP-data.play.hp) *0.5 << " healed !" << endl;
-				data.play.hp = (data.play.totalHP - data.play.hp)*0.5 + data.play.hp ; //Reset HP
+				cout << (data->play.totalHP-data->play.hp) *0.5 << " healed !" << endl;
+				data->play.hp = (data->play.totalHP - data->play.hp)*0.5 + data->play.hp ; //Reset HP
 			}
 			turn = 0;
 			sleep(2);
@@ -104,7 +106,7 @@ void dungeon(Game_data* data, int* location){
 			}
 			prob = rand() % 100;
 
-			if(prob < data.play.bp){
+			if(prob < data->play.bp){
 					cout << "Blocked enemy's attack !" << endl;
 			}else{
 				if(ult % 3 == 0){
@@ -113,7 +115,7 @@ void dungeon(Game_data* data, int* location){
 				}else{
 					cout << "Damaged by " << monDamage <<"!"<< endl;
 				}
-				data.play.hp = data.play.hp - monDamage;
+				data->play.hp = data->play.hp - monDamage;
 				//cout << "[HP] " << HP << " / " << totalHP << endl;
 			}
 			
@@ -123,30 +125,30 @@ void dungeon(Game_data* data, int* location){
 		}
 		//sleep(2);
 
-		if(data.play.hp <= 0){
+		if(data->play.hp <= 0){
 			std::system("clear");
-			cout << "YOU: [HP] 0 / " << data.play.totalHP << endl;
+			cout << "YOU: [HP] 0 / " << data->play.totalHP << endl;
 			cout << "ENEMY: [HP] " << monHP << " / " << totalmonHP << endl;
 			cout << "....." << endl;
 			cout << "You seriously injured... heading back to village" << endl;
 			cout << "You lost " << gold << " golds..." << endl;
-			data.play.money -= gold;
+			data->play.money -= gold;
 			run = 0;
 			win = 0;
 		}
 		if(monHP <= 0){
 			std::system("clear");
-			cout << "YOU: [HP] " << data.play.hp << " / " << data.play.totalHP << endl;
+			cout << "YOU: [HP] " << data->play.hp << " / " << data->play.totalHP << endl;
 			cout << "ENEMY: [HP] 0 / " << totalmonHP << endl;
 			cout << "You defeated the monster!" << endl;
 			cout << winXP << " xp gained !" << endl;
 			cout << gold << " gained !" << endl;
-			data.play.money += gold;
+			data->play.money += gold;
 			//level up
-			if(data.play.current_xp + winXP > data.play.max_xp){
-				data.play.current_xp = data.play.current_xp + winXP - data.play.max_xp;
-				data.play.level ++;
-				cout << "Level up ! Level : " << data.play.level << endl;
+			if(data->play.current_xp + winXP > data->play.max_xp){
+				data->play.current_xp = data->play.current_xp + winXP - data->play.max_xp;
+				data->play.level ++;
+				cout << "Level up ! Level : " << data->play.level << endl;
 			}
 			run = 0;
 			win = 1;
@@ -159,16 +161,17 @@ void dungeon(Game_data* data, int* location){
 		cout << "1.Yes 2.No" << endl;
 		cin >> input;
 		if(input == 1){
-			int location = 2;
-			dungeon(Game_data* data, int* location);
+			location[0] = 2;
+			dungeon(&data, &location);
 		}
 		else if(input == 2){
-			location = 1;
-			village(Game_data* data, int* location);
+			location[0] = 1;
+			cout << "Returning to village ... " << endl;
+			village(&data, &location);
 		}
 	}
 	else if(win == 0){
-		location = 1;
+		location[0] = 1;
 	}
 }
 
