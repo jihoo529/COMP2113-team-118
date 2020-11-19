@@ -7,8 +7,9 @@ using namespace std;
 Usernames user;
 Game_data data;
 New_player initial;
+int current_player;
 
-void new_user(Usernames* user, Game_data* data, New_player initial){
+void new_user(Usernames* user, Game_data* data, int* current_player, New_player initial){
 	cout << "Username : " << endl;
 	string newname;
 	cin >> newname;
