@@ -94,7 +94,7 @@ int main(){
 	cin >> sel;
 	if(sel == 1){
 		New_player initial;
-		new_user(&user, data, current_player, initial);
+		new_user(&user, &data, current_player, initial);
 		tutorial();
 	}
 	else if(sel == 2){
@@ -106,9 +106,9 @@ int main(){
 	}
 	int location = 1;
 	while(location != 0){
-		if(location == 1){village(data, location);}
-		else if(location == 2){store(data, location);}
-		else if(location == 3){dungeon(data, location);}
+		if(location == 1){village(&data, location);}
+		else if(location == 2){store(&data, location);}
+		else if(location == 3){dungeon(&data, location);}
 	}
 	cout << "Game quit... See you next time!" << endl;
 }
