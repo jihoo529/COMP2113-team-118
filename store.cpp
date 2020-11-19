@@ -6,7 +6,7 @@ using namespace std;
 void store(Game_data* data, int* location){
 	//Game_data data
 	int money = 1000;
-	int run = 1;
+	bool run = 1;
 	while(run == 1){
 		system("clear");
 		cout << "What do you wanna buy? You have " << money << " golds." << endl;
@@ -49,10 +49,8 @@ void store(Game_data* data, int* location){
 			}
 		}
 		else if(input == 3){
-			break;
+			run = 0;
 		}
 	}
-	int location = 1;
-	village(&data, &location);
-
+	location = 1;
 }
