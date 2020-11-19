@@ -2,9 +2,12 @@
 #include <fstream>
 #include <string>
 #include "save_data.h"
+#include "common.h"
 using namespace std;
 
-void save_data(Game_data* data, Game_data.play* play, int* location){
+Game_data data;
+
+void save_data(Game_data* data, int* location){
 	ifstream fin;
 	ofstream fout;
 	int total_player=0;
@@ -26,16 +29,16 @@ void save_data(Game_data* data, Game_data.play* play, int* location){
 	string* text = new string[total_player];
 	for(int i = 0; i<total_player; ++i){
 		if(i == player){
-			line = data.username + " ";
-			line = play.level + " ";
-			line = play.max_xp + " ";
-			line = play.current_xp + " ";
-			line = play.totalHP + " ";
-			line = play.hp + " ";
-			line = play.ad + " ";
-			line = play.bp + " ";
-			line = play.cp + " ";
-			line = play.money;
+			line = data->username + " ";
+			line = data->play.level + " ";
+			line = data->play.max_xp + " ";
+			line = data->play.current_xp + " ";
+			line = data->play.totalHP + " ";
+			line = data->play.hp + " ";
+			line = data->play.ad + " ";
+			line = data->play.bp + " ";
+			line = data->play.cp + " ";
+			line = data->play.money;
 			text[i] = line;
 			++i;
 		}
