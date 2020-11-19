@@ -94,7 +94,7 @@ int main(){
 	cin >> sel;
 	if(sel == 1){
 		New_player initial;
-		new_user(user, data, current_player, initial);
+		new_user(&user, data, current_player, initial);
 		tutorial();
 	}
 	else if(sel == 2){
@@ -102,9 +102,9 @@ int main(){
 			cout << "[" << i << "]" << user.user[i] << endl;
 		}
 		cin >> current_player;
-		load_data(current_player, user, data);
+		load_data(current_player, &user, data);
 	}
-	location[0] = 1;
+	int location = 1;
 	while(location != 0){
 		if(location == 1){village(data, location);}
 		else if(location == 2){store(data, location);}
