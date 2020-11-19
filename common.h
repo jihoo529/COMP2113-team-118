@@ -6,7 +6,7 @@ struct Player{
 };
 
 struct Game_data{
-	string username;
+	std::string username;
 	Player play;
 };
 
