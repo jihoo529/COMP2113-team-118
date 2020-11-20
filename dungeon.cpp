@@ -24,6 +24,24 @@ void dungeon(Game_data* data, int* location){
 	int init = 0; 
 	while(run == 1){
 		int monAD; int monHP; float monBP; int gold; int monType; int totalmonHP; int winXP;
+		if(data->play.level >= 2){
+			int sel;
+			cout << "Hidden dungeon is revealed. Do you want to go in?" << endl;
+			cout << "[1] Yes [2] No" << endl;
+			cin >> sel;
+			if(sel == 1){
+				monAD = 1.5* data->play.ad;
+				monHP = 1.5* data->play.totalHP;
+				monBP = data->play.bp;
+				monType = 3;
+				
+			}//boss stage
+			else if(sel == 2){
+				cout << "Returning back to original dungeon" << endl;
+				sleep(2);
+			}
+		}
+				
 		if(init == 0){
 			//int try = 0;
 			srand(time(0));
@@ -46,7 +64,7 @@ void dungeon(Game_data* data, int* location){
 				winXP = 25;
 			}
 			else if(mon == 9){
-				monAD = 1.5 * data->play.ad;
+				monAD = 1.2 * data->play.ad;
 				monHP = 1.2 * data->play.totalHP;
 				monBP = 1 * data->play.bp;
 				gold = 100;
@@ -61,6 +79,7 @@ void dungeon(Game_data* data, int* location){
 		if(monType == 0){cout << "weak" << endl;}
 		else if(monType == 1){cout << "normal" << endl;}
 		else if(monType == 2){cout << "strong !!" << endl;}
+		else if(monType == 3){cout << " ...... " << endl;}
 		cout << "[HP] " << data->play.hp << " / " << data->play.totalHP << endl;
 		cout << "[Enemy] " << monHP << " / " << totalmonHP << endl;
 		int input;
@@ -76,7 +95,16 @@ void dungeon(Game_data* data, int* location){
 				if(prob < monBP){//Monster's blocking probability
 					cout << "Attack BLOCKED !"<< endl;
 				}
-				else{
+				else{	
+					int reflect = rand() % 3;
+					if(monType == 3){
+						if(reflect == 1){
+							cout << "Monster REFLECTED your attack ...!" << endl;
+							cout << "You are damaged by " << 0.3 * data->play.ad <<"!!"<< endl;
+							data->play.hp -= 0.3 * data->play.ad;
+						}
+					}
+							
 					prob = rand() % 100; 
 					if(prob < data->play.cp){
 						damage = data->play.ad * 2; // calculating critical damage
@@ -120,7 +148,7 @@ void dungeon(Game_data* data, int* location){
 				monDamage = monAD;
 			}
 			prob = rand() % 100;
-
+			
 			if(prob < data->play.bp){
 					cout << "Blocked enemy's attack !" << endl;
 			}else{
@@ -155,6 +183,10 @@ void dungeon(Game_data* data, int* location){
 		}
 		if(monHP <= 0){
 			std::system("clear");
+			if(monType == 3){
+				cout << "You defeated the final boss of dungeon, hero..." << endl;
+				win = 3;
+			}
 			cout << "YOU: [HP] " << data->play.hp << " / " << data->play.totalHP << endl;
 			cout << "ENEMY: [HP] 0 / " << totalmonHP << endl;
 			cout << "-------------------------------------------------" << endl;
@@ -206,6 +238,12 @@ void dungeon(Game_data* data, int* location){
 			//try = 0;
 			run = 0;
 		}
+		else if(win == 3){
+			location[0] = 1;
+			cout << "You are the hero of the village. Going back to your village ... " << endl;
+			run = 0;
+		}
+			
 		
 	}//end of while (run == 1) loop
 	
