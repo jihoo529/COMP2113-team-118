@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string>
 #include "dungeon.h"
 //#include "common.h"
 
@@ -23,7 +24,7 @@ void dungeon(Game_data* data, int* location){
 	int damage;
 	int init = 0; 
 	while(run == 1){
-		int monAD; int monHP; float monBP; int gold; int monType; int totalmonHP; int winXP; string monName = "";
+		int monAD; int monHP; float monBP; int gold; int monType; int totalmonHP; int winXP; string monName;
 		
 				
 		if(init == 0){
@@ -32,11 +33,11 @@ void dungeon(Game_data* data, int* location){
 			if(data->play.level >= 2){
 			int sel;
 			cout << "Hidden dungeon is revealed. Do you want to go in?" << endl;
-			cout << "[1] Yes [2] No" << endl;
+			cout << "[1] Yes [2] No, take me to normal dungeon" << endl;
 			cin >> sel;
 			if(sel == 1){
-				monAD = 1.5* data->play.ad;
-				monHP = 1.5* data->play.totalHP;
+				monAD = 0.5* data->play.ad;
+				monHP = 0.5* data->play.totalHP;
 				monBP = data->play.bp;
 				monType = 3;
 				monName = "Demogorgon";
