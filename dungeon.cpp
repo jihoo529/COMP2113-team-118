@@ -17,7 +17,7 @@ void dungeon(Game_data* data, int* location){
 		
  	int turn = random() % 2;
 	
-	int win;
+	int win = 2;
 	int run = 1; int ult = 1;
 	int damage;
 	int init = 0;
@@ -135,6 +135,7 @@ void dungeon(Game_data* data, int* location){
 			data->play.money -= gold;
 			run = 0;
 			win = 0;
+			sleep(3);
 		}
 		if(monHP <= 0){
 			std::system("clear");
