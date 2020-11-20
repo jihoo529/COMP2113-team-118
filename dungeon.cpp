@@ -63,8 +63,8 @@ void dungeon(Game_data* data, int* location){
 		if(turn == 1){
 			cout << endl;
 			cout << "What will you do ?" << endl;
-			cout << "1. Attack" << endl;
-			cout << "2. Health potion" << endl;
+			cout << "[1] Attack" << endl;
+			cout << "[2] Health potion" << endl;
 			cin >> input ;
 			if(input == 1){
 				prob = rand() % 100; //double between 0 and 1
@@ -156,7 +156,7 @@ void dungeon(Game_data* data, int* location){
 		if(win == 1){
 			cout << "Continue with dungeon ?" << endl;
 			int input;
-			cout << "1.Yes 2.No" << endl;
+			cout << "[1] Yes [2] No" << endl;
 			cin >> input;
 			if(input == 1){
 				location[0] = 3;
