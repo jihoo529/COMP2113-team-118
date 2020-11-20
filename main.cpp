@@ -79,7 +79,7 @@ int main(){
 	cout << "Welcome to Dungeon" << endl;
 	cout << "[1] New Player [2] Continue" << endl;
 	ifstream fin;
-	ofstream fout:
+	ofstream fout;
 	string line;
 	fout.open("game_users.txt");
 	if(fin.fail()){
