@@ -91,20 +91,22 @@ int main(){
 		fout.open("game_users.txt");
 		fout.close();
 	}
-	while(getline(fin, line)){
-		if(line.length() == 0){break;}
-		int index = line.find(" ");
-		string p = line.substr(0, index);
-		string* temp = new string[user.num + 1];
-		for(int i = 0; i<user.num; ++i){
-			temp[i] = user.user[i];
+	else{
+		while(getline(fin, line)){
+			if(line.length() == 0){break;}
+			int index = line.find(" ");
+			string p = line.substr(0, index);
+			string* temp = new string[user.num + 1];
+			for(int i = 0; i<user.num; ++i){
+				temp[i] = user.user[i];
+			}
+			temp[user.num] = p;
+			++user.num;
+			user.user = temp;
+			delete[] &temp;
 		}
-		temp[user.num] = p;
-		++user.num;
-		user.user = temp;
-		delete[] &temp;
+		fin.close();
 	}
-	fin.close();
 	int sel = 0;
 	cin >> sel;
 	if(sel == 1){
