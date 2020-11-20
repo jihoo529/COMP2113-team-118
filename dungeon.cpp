@@ -30,7 +30,7 @@ void dungeon(Game_data* data, int* location){
 	int damage;
 	int init = 0;
 	while(run == 1){
-		int monAD; int monHP; float monBP; int gold; int monType;
+		int monAD; int monHP; float monBP; int gold; int monType; int totalmonHP;
 		if(init == 0){
 			srand(time(0));
 			int mon = random() % 10;
@@ -56,14 +56,14 @@ void dungeon(Game_data* data, int* location){
 				gold = 50;
 				monType = 2;
 			}
-			int totalmonHP = monHP;
+			totalmonHP = monHP;
 			init = 1;
 		}
 		
 		std::system("clear");
-		if(monType == 0){cout << "weak" << endl;};
-		else if(monType == 1){cout << "normal" << endl;};
-		else if(monType == 2){cout << "strong !!" << endl;};
+		if(monType == 0){cout << "weak" << endl;}
+		else if(monType == 1){cout << "normal" << endl;}
+		else if(monType == 2){cout << "strong !!" << endl;}
 		cout << "[HP] " << data->play.hp << " / " << data->play.totalHP << endl;
 		cout << "[Enemy] " << monHP << " / " << totalmonHP << endl;
 		int input;
