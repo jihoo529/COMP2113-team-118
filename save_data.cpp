@@ -11,7 +11,7 @@ void save_data(Game_data* data, int* location){
 	ifstream fin;
 	ofstream fout;
 	int total_player=1; //initially 0
-	int player=1; //initially 0
+	int player=0; //initially 0
 	string line;
 	fin.open("game_users.txt");
 	if(fin.fail()){
@@ -39,9 +39,9 @@ void save_data(Game_data* data, int* location){
 			line = data->play.bp + " ";
 			line = data->play.cp + " ";
 			line = data->play.nump + " ";
-			line = data->play.money + '\n';
+			line = data->play.money;
 			text[i] = line;
-			++i;
+			continue;
 		}
 		getline(fin, text[i]);
 	}
