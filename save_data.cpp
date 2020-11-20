@@ -23,13 +23,16 @@ void save_data(Game_data* data, int* location){
 		++total_player;
 		if(data->username == line.substr(0, index)){
 			player = total_player-1;
+			++total_player;
 		}
 	}
-	if(total_player == 0){++total_player;}
-	cout << player << endl;
-	cout << total_player << endl;
-	line.erase();
+	if(total_player == 0){
+		++total_player;
+	}
+	//cout << player << endl;
+	//cout << total_player << endl;
 	string* text = new string[total_player];
+	line.erase();
 	for(int i = 0; i<total_player; ++i){
 		if(i == player){
 			line += data->username + " ";
@@ -44,11 +47,9 @@ void save_data(Game_data* data, int* location){
 			line += to_string(data->play.nump) + " ";
 			line += to_string(data->play.money);
 			text[i] = line;
-			cout << text[i] << endl;
 		}
 		else{getline(fin, text[i]);}
 	}
-	cout << text[0] << endl;
 	fin.close();
 	fout.open("game_users.txt");
 	if(fout.fail()){
@@ -56,7 +57,6 @@ void save_data(Game_data* data, int* location){
 		exit(1);
 	}
 	for(int i = 0; i<total_player; ++i){
-		cout << text[i] << endl;
 		fout << text[i];
 		if(i<(total_player-1)){cout << endl;}
 	}
