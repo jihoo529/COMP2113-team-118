@@ -16,7 +16,7 @@ void load_data(int current_player, Usernames user, Game_data* data){
 		if(i == current_player){
 			getline(fin, line);
 			int index = line.find(" ");
-			data->username = std::stoi(line.substr(0, index));
+			data->username = line.substr(0, index);
 			line = line.erase(0, index);
 			index = line.find(" ");
 			data->play.level = std::stoi(line.substr(0, index));
