@@ -4,7 +4,7 @@ FLAGS = -pedantic-errors -std=c++11
 save_data.o: save_data.cpp save_data.h
 	g++ $(FLAGS) -c $<
 
-village.o: village.cpp village.h 
+village.o: village.cpp village.h save_data.h
 	g++ $(FLAGS) -c $<
 
 new_user.o: new_user.cpp new_user.h
