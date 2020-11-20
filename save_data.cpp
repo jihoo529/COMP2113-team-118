@@ -7,7 +7,7 @@ using namespace std;
 
 //Game_data data;
 
-void save_data(Game_data* data, int* location){
+void save_data(Game_data* data, int* location, int current_player){
 	ifstream fin;
 	ofstream fout;
 	int total_player = 0; //initially 0
@@ -22,8 +22,8 @@ void save_data(Game_data* data, int* location){
 	while(getline(fin, line)){
 		int index = line.find(" ");
 		++total_player;
-		if(data->username == line.substr(0, index)){
-			player = total_player-1;
+		if(data->username == line.substr(0, index) && current_player != -1){
+			player = current_player;
 		}
 		else{++count;}
 	}
