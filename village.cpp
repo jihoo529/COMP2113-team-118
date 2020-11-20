@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 #include "village.h"
-//#include "save_data.h"
+#include "save_data.h"
 //#include "common.h"
 using namespace std;
 
