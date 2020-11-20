@@ -23,13 +23,14 @@ void save_data(Game_data* data, int* location, int current_player){
 		player = total_player;
 		++total_player;
 	}
-	else{player = current_player;}
-	cout << current_player << endl;
-	cout << total_player << endl;
-	cout << player << endl;
-	fin.close();
-	//cout << player << endl;
+	else{
+		player = current_player;
+		++total_player;
+	}
+	//cout << current_player << endl;
 	//cout << total_player << endl;
+	//cout << player << endl;
+	fin.close();
 	string* text = new string[total_player];
 	fin.open("game_users.txt");
 	for(int i = 0; i<total_player; ++i){
