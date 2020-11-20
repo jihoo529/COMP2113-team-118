@@ -85,16 +85,11 @@ int main(){
 	ifstream fin;
 	ofstream fout;
 	string line;
-	fout.open("game_users.txt");
-	if(fin.fail()){
-		cout << "Cannot access game memory (1)" << endl;
-		exit(1);
-	}
-	fout.close();
 	fin.open("game_users.txt");
 	if(fin.fail()){
-		cout << "Cannot access game memory (2)" << endl;
-		exit(1);
+		fin.close();
+		fout.open("game_users.txt");
+		fout.close();
 	}
 	while(getline(fin, line)){
 		if(line.length() == 0){break;}
