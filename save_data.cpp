@@ -57,6 +57,7 @@ void save_data(Game_data* data, int* location){
 	fout.close();
 	cout << "Continue? [1] Yes [2] Quit" << endl;
 	int sel = 0;
+	cin >> sel;
 	if(sel == 1){
 		location[0] = 1;
 	}
