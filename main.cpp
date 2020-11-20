@@ -11,7 +11,7 @@
 #include "save_data.h"
 using namespace std;
 
-void village(Game_data*, int*);
+void village(Game_data*, int*, int);
 int location;
 //extern int location;
 const int MAXHP = 10000;
