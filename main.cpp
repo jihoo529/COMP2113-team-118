@@ -107,7 +107,7 @@ int main(){
 		cin >> current_player;
 		load_data(current_player, user, &data);
 	}
-	location = 1;
+	extern int location = 1;
 	while(location != 0){
 		if(location == 1){village(&data, &location);}
 		else if(location == 2){store(&data, &location);}
