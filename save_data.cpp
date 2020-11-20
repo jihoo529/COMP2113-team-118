@@ -33,18 +33,18 @@ void save_data(Game_data* data, int* location){
 		if(i == player){
 			line = data->username + " ";
 			cout << line << endl;
-			line = data->play.level + " ";
+			line = to_string(data->play.level) + " ";
 			cout << line << endl;
-			line = data->play.max_xp + " ";
+			line = to_string(data->play.max_xp) + " ";
 			cout << line << endl;
-			line = data->play.current_xp + " ";
-			line = data->play.totalHP + " ";
-			line = data->play.hp + " ";
-			line = data->play.ad + " ";
-			line = data->play.bp + " ";
-			line = data->play.cp + " ";
-			line = data->play.nump + " ";
-			line = data->play.money;
+			line = to_string(data->play.current_xp) + " ";
+			line = to_string(data->play.totalHP) + " ";
+			line = to_string(data->play.hp) + " ";
+			line = to_string(data->play.ad) + " ";
+			line = to_string(data->play.bp) + " ";
+			line = to_string(data->play.cp) + " ";
+			line = to_string(data->play.nump) + " ";
+			line = to_string(data->play.money);
 			text[i] = line;
 			cout << text[i] << endl;
 		}
