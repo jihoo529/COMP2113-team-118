@@ -252,7 +252,7 @@ void dungeon(Game_data* data, int* location){
 		}
 		else if(win == 3){
 			location[0] = 10;
-			cout << "You are the hero of the village. Going back to your village ... " << endl;
+			//cout << "You are the hero of the village. Going back to your village ... " << endl;
 			run = 0;
 			//system("clear");
 		}
