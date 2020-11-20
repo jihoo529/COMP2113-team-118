@@ -10,8 +10,9 @@ using namespace std;
 void save_data(Game_data* data, int* location){
 	ifstream fin;
 	ofstream fout;
-	int total_player=0; //initially 0
-	int player=0; //initially 0
+	int total_player = 0; //initially 0
+	int player = 0; //initially 0
+	int count = 0;
 	string line;
 	fin.open("game_users.txt");
 	if(fin.fail()){
@@ -22,18 +23,20 @@ void save_data(Game_data* data, int* location){
 		int index = line.find(" ");
 		++total_player;
 		if(data->username == line.substr(0, index)){
-			++total_player;
 			player = total_player-1;
 		}
+		else{++count;}
 	}
-	if(total_player == 0){
-		++total_player;
+	if(total_player == count){
+		++count;
+		player = count;
 	}
+	else{++count;}
 	//cout << player << endl;
 	//cout << total_player << endl;
-	string* text = new string[total_player];
+	string* text = new string[count];
 	line.erase();
-	for(int i = 0; i<total_player; ++i){
+	for(int i = 0; i<count; ++i){
 		if(i == player){
 			line += data->username + " ";
 			line += to_string(data->play.level) + " ";
@@ -56,9 +59,9 @@ void save_data(Game_data* data, int* location){
 		cout << "There was a problem in accessing the game memory (2)" << endl;
 		exit(1);
 	}
-	for(int i = 0; i<total_player; ++i){
+	for(int i = 0; i<count; ++i){
 		fout << text[i];
-		if(i<(total_player-1)){cout << endl;}
+		if(i<(count-1)){cout << endl;}
 	}
 	fout.close();
 	cout << "Continue? [1] Yes [2] Quit" << endl;
