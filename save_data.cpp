@@ -43,6 +43,7 @@ void save_data(Game_data* data, int* location, int current_player){
 			line += to_string(data->play.nump) + " ";
 			line += to_string(data->play.money);
 			text[i] = line;
+			cout << text[i] << endl;
 		}
 		else{getline(fin, text[i]);}
 	}
