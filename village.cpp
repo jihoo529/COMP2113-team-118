@@ -3,11 +3,11 @@
 #include <string>
 #include "village.h"
 //#include "save_data.h"
-//#include "common.h"
+#include "common.h"
 using namespace std;
 
 //struct Game_data;
-Game_data data;
+//Game_data data;
 //void save_data(Game_data* data, int* location);
 
 void village(Game_data* data, int* location){
