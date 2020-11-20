@@ -31,12 +31,9 @@ void save_data(Game_data* data, int* location){
 	string* text = new string[total_player];
 	for(int i = 0; i<total_player; ++i){
 		if(i == player){
-			line += data->username + " ";
-			cout << line << endl;
+			line += to_string(data->username) + " ";
 			line += to_string(data->play.level) + " ";
-			cout << line << endl;
 			line += to_string(data->play.max_xp) + " ";
-			cout << line << endl;
 			line += to_string(data->play.current_xp) + " ";
 			line += to_string(data->play.totalHP) + " ";
 			line += to_string(data->play.hp) + " ";
