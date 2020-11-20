@@ -56,10 +56,14 @@ void dungeon(Game_data* data, int* location){
 				gold = 50;
 				monType = 2;
 			}
+			int totalmonHP = monHP;
 			init = 1;
 		}
-		int totalmonHP = monHP;
+		
 		std::system("clear");
+		if(monType == 0){cout << "weak" << endl;};
+		else if(monType == 1){cout << "normal" << endl;};
+		else if(monType == 2){cout << "strong !!" << endl;};
 		cout << "[HP] " << data->play.hp << " / " << data->play.totalHP << endl;
 		cout << "[Enemy] " << monHP << " / " << totalmonHP << endl;
 		int input;
