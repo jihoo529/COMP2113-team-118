@@ -55,7 +55,7 @@ void tutorial(){
 		sleep(1.5);
 		cout << "Then..... GOOD LUCK !!!" << endl;
 		cout << endl;
-		cout << "If you want to go through again, please enter 1. Enter 2 other wise" << endl;
+		cout << "Do you want to go through the tutorial again? [1] Yes [2] No" << endl;
 		int input;
 		cin >> input;
 		if(input == 1){
