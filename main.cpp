@@ -13,6 +13,7 @@ using namespace std;
 
 void village(Game_data*, int*);
 
+extern int location;
 const int MAXHP = 10000;
 const int MAXAD = 10000;
 const int MAXBP = 40;
@@ -107,7 +108,7 @@ int main(){
 		cin >> current_player;
 		load_data(current_player, user, &data);
 	}
-	extern int location = 1;
+	location = 1;
 	while(location != 0){
 		if(location == 1){village(&data, &location);}
 		else if(location == 2){store(&data, &location);}
