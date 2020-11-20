@@ -41,6 +41,8 @@ void dungeon(Game_data* data, int* location){
 				monBP = data->play.bp;
 				monType = 3;
 				monName = "Demogorgon";
+				winXP = 100;
+				gold = 300;
 				
 			}//boss stage
 			else if(sel == 2){
@@ -193,12 +195,14 @@ void dungeon(Game_data* data, int* location){
 			std::system("clear");
 			if(monType == 3){
 				cout << "You defeated the final boss of dungeon, hero..." << endl;
+				cout << endl;
+				cout << endl;
 				win = 3;
 			}
 			cout << "YOU: [HP] " << data->play.hp << " / " << data->play.totalHP << endl;
 			cout << "ENEMY: [HP] 0 / " << totalmonHP << endl;
 			cout << "-------------------------------------------------" << endl;
-			cout << "You defeated the monster!" << endl;
+			cout << "You defeated "<<monName <<"!" << endl;
 			cout << winXP << " xp gained !" << endl;
 			cout << gold << " gold gained !" << endl;
 			//
@@ -247,9 +251,10 @@ void dungeon(Game_data* data, int* location){
 			run = 0;
 		}
 		else if(win == 3){
-			location[0] = 1;
+			location[0] = 10;
 			cout << "You are the hero of the village. Going back to your village ... " << endl;
 			run = 0;
+			//system("clear");
 		}
 			
 		
