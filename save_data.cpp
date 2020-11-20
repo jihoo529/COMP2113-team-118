@@ -10,7 +10,7 @@ using namespace std;
 void save_data(Game_data* data, int* location){
 	ifstream fin;
 	ofstream fout;
-	int total_player=1; //initially 0
+	int total_player=0; //initially 0
 	int player=0; //initially 0
 	string line;
 	fin.open("game_users.txt");
@@ -25,9 +25,9 @@ void save_data(Game_data* data, int* location){
 		}
 		++total_player;
 	}
+	if(total_player == 0){++total_player;}
 	cout << player << endl;
 	cout << total_player << endl;
-	line.erase();
 	string* text = new string[total_player];
 	for(int i = 0; i<total_player; ++i){
 		if(i == player){
@@ -60,10 +60,6 @@ void save_data(Game_data* data, int* location){
 	cout << "Continue? [1] Yes [2] Quit" << endl;
 	int sel = 0;
 	cin >> sel;
-	if(sel == 1){
-		location[0] = 1;
-	}
-	else if(sel == 2){
-		location[0] = 0;
-	}
+	if(sel == 1){location[0] = 1;}
+	else if(sel == 2){location[0] = 0;}
 }
