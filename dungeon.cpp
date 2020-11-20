@@ -24,7 +24,7 @@ void dungeon(Game_data* data, int* location){
 	int damage;
 	int init = 0; 
 	while(run == 1){
-		int monAD; int monHP; float monBP; int gold; int monType; int totalmonHP; int winXP; string monName;
+		int monAD; int monHP; float monBP; int gold; int monType; int totalmonHP; int winXP; string monName = "";
 		
 				
 		if(init == 0){
@@ -40,7 +40,7 @@ void dungeon(Game_data* data, int* location){
 				monHP = 0.5* data->play.totalHP;
 				monBP = data->play.bp;
 				monType = 3;
-				monName = "Demogorgon";
+				monName += "Demogorgon";
 				winXP = 100;
 				gold = 300;
 				
@@ -58,7 +58,7 @@ void dungeon(Game_data* data, int* location){
 				gold = 20;
 				monType = 0;
 				winXP = 15;
-				monName = "Slimer";
+				monName += "Slimer";
 
 			}
 			else if(3 < mon && 9 > mon && monType != 3){
@@ -68,7 +68,7 @@ void dungeon(Game_data* data, int* location){
 				gold = 30;
 				monType = 1;
 				winXP = 25;
-				monName = "Gorillta";
+				monName += "Gorillta";
 			}
 			else if(mon == 9 && monType != 3){
 				monAD = 1.2 * data->play.ad;
@@ -77,7 +77,7 @@ void dungeon(Game_data* data, int* location){
 				gold = 100;
 				monType = 2;
 				winXP = 50;
-				monName = "Spider Queen";
+				monName += "Spider Queen";
 			}
 			totalmonHP = monHP;
 			init = 1;
@@ -119,14 +119,18 @@ void dungeon(Game_data* data, int* location){
 					if(prob < data->play.cp){
 						damage = data->play.ad * 2; // calculating critical damage
 						cout << "Critical HIT !!" << endl;
+						cout << damage << " damage dealt to enemy!" << endl;
+						monHP = monHP - damage;
 					}
 					else{
 						damage = data->play.ad;
+						cout << damage << " damage dealt to enemy!" << endl;
+						monHP = monHP - damage;
 					}
 
-					cout << damage << " damage dealt to enemy!" << endl;
+					
 					//cout << monHP - damage << "/" << monHP << endl; ; //damage dealt to monster
-					monHP = monHP - damage;
+					
 				}
 			}
 			else if(input == 2){
@@ -198,13 +202,16 @@ void dungeon(Game_data* data, int* location){
 				cout << endl;
 				cout << endl;
 				win = 3;
+				run = 0;
 			}
-			cout << "YOU: [HP] " << data->play.hp << " / " << data->play.totalHP << endl;
-			cout << "ENEMY: [HP] 0 / " << totalmonHP << endl;
-			cout << "-------------------------------------------------" << endl;
-			cout << "You defeated "<<monName <<"!" << endl;
-			cout << winXP << " xp gained !" << endl;
-			cout << gold << " gold gained !" << endl;
+			if(monType != 3){
+				cout << "YOU: [HP] " << data->play.hp << " / " << data->play.totalHP << endl;
+				cout << "ENEMY: [HP] 0 / " << totalmonHP << endl;
+				cout << "-------------------------------------------------" << endl;
+				cout << "You defeated "<<monName <<"!" << endl;
+				cout << winXP << " xp gained !" << endl;
+				cout << gold << " gold gained !" << endl;
+			}
 			//
 			data->play.money += gold;
 			//level up
