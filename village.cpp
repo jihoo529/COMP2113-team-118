@@ -24,6 +24,8 @@ void village(Game_data* data, int* location, int current_player){
 	cout << "-----------------------------------------------------------------" << endl;
 	cout << "Village : [1] Go to store [2] Go to dungeon [3] Heal HP [4] Save" << endl;
 	
+	
+	
 	cin >> sel;
 	if(sel == 1){location[0] = 2;}
 	else if(sel == 2){location[0] = 3;}
@@ -33,5 +35,11 @@ void village(Game_data* data, int* location, int current_player){
 	}
 	else if(sel == 4){
 		save_data(data, location, current_player);
+	}
+	else if(data->play.level >=2){
+		cout << "Hidden underground dungeon is revealed. Enter [5] to enter..." << endl;
+		if(sel == 5){
+			location[0] = 3;
+		}
 	}
 }
