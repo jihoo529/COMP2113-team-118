@@ -28,28 +28,35 @@ void dungeon(Game_data* data, int* location){
 	
 	int run = 1; int ult = 1;
 	int damage;
+	int init = 0;
 	while(run == 1){
-		srand(time(0));
-		int monAD; int monHP; int monBP; int gold;
-		int mon = random() % 10;
-		if(0 <= mon && mon <= 5){
-			monAD = 0.8 * data->play.ad;
-			monHP = 0.8 * data->play.hp;
-			monBP = 0.8 * data->play.bp;
-			gold = 20;
+		if(init == 0){
+			srand(time(0));
+			int monAD; int monHP; float monBP; int gold; int monType;
+			int mon = random() % 10;
+			if(0 <= mon && mon <= 5){
+				monAD = 0.8 * data->play.ad;
+				monHP = 0.8 * data->play.hp;
+				monBP = 0.8 * data->play.bp;
+				gold = 20;
+				monType = 0;
 
-		}
-		else if(5 < mon && 9 > mon){
-			monAD = data->play.ad;
-			monHP = data->play.hp;
-			monBP = data->play.bp;
-			gold = 30;
-		}
-		else if(mon == 9){
-			monAD = 1.2 * data->play.ad;
-			monHP = 1.2 * data->play.hp;
-			monBP = 1.2 * data->play.bp;
-			gold = 50;
+			}
+			else if(5 < mon && 9 > mon){
+				monAD = data->play.ad;
+				monHP = data->play.hp;
+				monBP = data->play.bp;
+				gold = 30;
+				monType = 1;
+			}
+			else if(mon == 9){
+				monAD = 1.2 * data->play.ad;
+				monHP = 1.2 * data->play.hp;
+				monBP = 1.2 * data->play.bp;
+				gold = 50;
+				monType = 2;
+			}
+			init = 1;
 		}
 		int totalmonHP = monHP;
 		std::system("clear");
