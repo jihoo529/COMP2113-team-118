@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <math.h>
 #include "dungeon.h"
 //#include "common.h"
 
@@ -11,7 +12,7 @@ using namespace std;
 //const stat[] = { }
 
 
-
+int try = 1;
 void dungeon(Game_data* data, int* location){
 	srand(time(0));
 		
@@ -95,7 +96,7 @@ void dungeon(Game_data* data, int* location){
 		}
 		
 		else if(turn == 0){//monster's turn
-			float monDamage = monAD;
+			int monDamage = monAD;
 			cout << endl;
 			cout << "Monster attacked you !" << endl;
 			//cout << ult << endl;
@@ -133,7 +134,7 @@ void dungeon(Game_data* data, int* location){
 			cout << "....." << endl;
 			cout << "You seriously injured... heading back to village" << endl;
 			cout << "You lost " << gold << " golds..." << endl;
-			data->play.money -= gold;
+			data->play.money -= 20;
 			run = 0;
 			win = 0;
 			sleep(2);
@@ -145,8 +146,8 @@ void dungeon(Game_data* data, int* location){
 			cout << "-------------------------------------------------" << endl;
 			cout << "You defeated the monster!" << endl;
 			cout << winXP << " xp gained !" << endl;
-			cout << gold << " gold gained !" << endl;
-			data->play.money += gold;
+			cout << gold*pow(1.1, try-1) << " gold gained !" << endl;
+			data->play.money += gold*pow(1.1, try-1);
 			//level up
 			if(data->play.current_xp + winXP > data->play.max_xp){
 				data->play.current_xp = data->play.current_xp + winXP - data->play.max_xp;
@@ -163,6 +164,7 @@ void dungeon(Game_data* data, int* location){
 			cin >> input;
 			if(input == 1){
 				location[0] = 3;
+				try += 1;
 				continue;
 				
 			}
