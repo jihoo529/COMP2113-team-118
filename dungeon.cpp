@@ -13,9 +13,9 @@ using namespace std;
 
 
 
-void dungeon(Game_data* data, int* location){
+void dungeon(Game_data* data, int* location, int try){
 	srand(time(0));
-	int* try;	
+	//int* try;	
  	int turn = random() % 2;
 	
 	int win = 2;
