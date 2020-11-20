@@ -11,7 +11,7 @@ using namespace std;
 //Game_data data;
 //void save_data(Game_data* data, int* location);
 
-void village(Game_data* data, int* location){
+void village(Game_data* data, int* location, int current_player){
 	system("clear");
 	ofstream fout;
 	int sel = 0;
@@ -32,6 +32,6 @@ void village(Game_data* data, int* location){
 		cout << "Healed... [HP] " << data->play.hp << " / " << data->play.totalHP << endl;
 	}
 	else if(sel == 4){
-		save_data(data, location);
+		save_data(data, location, current_player);
 	}
 }
