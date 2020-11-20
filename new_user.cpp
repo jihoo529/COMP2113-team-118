@@ -41,6 +41,7 @@ void new_user(Usernames* user, Game_data* data, int* current_player, New_player 
 			data->play.bp = initial.bp;
 			data->play.cp = initial.cp;
 			data->play.money = initial.money;
+			data->play.nump = initial.nump;
 			current_player[0] = user->num;
 			++user->num;
 			run = 0;
