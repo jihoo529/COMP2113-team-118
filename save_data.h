@@ -1,8 +1,7 @@
 #ifndef SAVE_DATA_H
 #define SAVE_DATA_H
 
-int location;
-//#include "common.h"
+#include "common.h"
 //void save_data();
 
 void save_data(Game_data* data, int* location);
