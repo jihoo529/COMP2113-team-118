@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "dungeon.h"
-//#include "common.h"
+#include "common.h"
 
 using namespace std;
 
