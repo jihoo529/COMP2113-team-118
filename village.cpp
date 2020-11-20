@@ -36,10 +36,10 @@ void village(Game_data* data, int* location, int current_player){
 	else if(sel == 4){
 		save_data(data, location, current_player);
 	}
-	else if(data->play.level >=2){
+	/*else if(data->play.level >=2){
 		cout << "Hidden underground dungeon is revealed. Enter [5] to enter..." << endl;
 		if(sel == 5){
 			location[0] = 3;
 		}
-	}
+	}*/
 }
