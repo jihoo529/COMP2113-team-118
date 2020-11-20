@@ -14,7 +14,7 @@ struct New_player{
 	int level = 1;
 	int max_xp = level*50;
 	int current_xp = 0;
-	int totalHP = 50, hp = 50, ad = 10, bp = 5;
+	int totalHP = 50, hp = 50, ad = 15, bp = 5;
 	int cp = 0;
 	int money = 100;
 };
