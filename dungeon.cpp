@@ -90,7 +90,7 @@ void dungeon(Game_data* data, int* location){
 			}
 			else if(input == 2){
 				if(data->play.nump < 1){
-					cout << Not enough health potion !" << endl;
+					cout << "Not enough health potion !" << endl;
 					turn = 1;
 					continue;
 				}
