@@ -3,14 +3,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <math.h>
 #include "dungeon.h"
 //#include "common.h"
 
 using namespace std;
 
 //const stat[] = { }
-int* try = 0;
+//int* try = 0;
 
 
 void dungeon(Game_data* data, int* location){
@@ -148,8 +147,8 @@ void dungeon(Game_data* data, int* location){
 			cout << "-------------------------------------------------" << endl;
 			cout << "You defeated the monster!" << endl;
 			cout << winXP << " xp gained !" << endl;
-			cout << gold*pow(1.1, try-1) << " gold gained !" << endl;
-			data->play.money += gold*pow(1.1, try-1);
+			cout << gold << " gold gained !" << endl;
+			data->play.money += gold;
 			//level up
 			if(data->play.current_xp + winXP > data->play.max_xp){
 				data->play.current_xp = data->play.current_xp + winXP - data->play.max_xp;
@@ -166,22 +165,24 @@ void dungeon(Game_data* data, int* location){
 			cin >> input;
 			if(input == 1){
 				location[0] = 3;
+				cout <<"Bonus gold [" << gold*0.2 << "] gained !" << endl;
+				data->play.money += gold*0.2;
 				
-				try += 1;
+				//try += 1;
 				continue;
 				
 			}
 			else if(input == 2){
 				location[0] = 1;
 				cout << "Returning to village ... " << endl;
-				try = 0;
+				//try = 0;
 				run = 0;
 			}
 		}
 		else if(win == 0){
 			sleep(2);
 			location[0] = 1;
-			try = 0;
+			//try = 0;
 			run = 0;
 		}
 		
