@@ -48,7 +48,7 @@ void store(Game_data* data, int* location){
 			}else{
 				cout << "Black smith: upgraded completed ..!" << endl;
 				cout << "Your critical probability has increased by 5" << endl;
-				data.play.cp += 5;
+				data->play.cp += 5;
 				data->play.money = data->play.money - 200;
 				cout << "You have " << data->play.money << " golds left" << endl;
 				sleep(3);
