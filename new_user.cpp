@@ -22,7 +22,8 @@ void new_user(Usernames* user, Game_data* data, int* current_player, New_player 
 			}
 			else{++count;}
 		}//end of for loop 1
-		if((user->num) == count+1){
+		cout << user->num << " " << count;
+		if(user->num == count){
 			string* temp = new string[user->num +1];
 			for(int i = 0; i<user->num; ++i){
 				temp[i] = user->user[i];
