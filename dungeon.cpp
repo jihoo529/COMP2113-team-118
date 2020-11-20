@@ -24,7 +24,12 @@ void dungeon(Game_data* data, int* location){
 	int init = 0; 
 	while(run == 1){
 		int monAD; int monHP; float monBP; int gold; int monType; int totalmonHP; int winXP;
-		if(data->play.level >= 2){
+		
+				
+		if(init == 0){
+			//int try = 0;
+			srand(time(0));
+			if(data->play.level >= 2){
 			int sel;
 			cout << "Hidden dungeon is revealed. Do you want to go in?" << endl;
 			cout << "[1] Yes [2] No" << endl;
@@ -39,12 +44,8 @@ void dungeon(Game_data* data, int* location){
 			else if(sel == 2){
 				cout << "Returning back to original dungeon" << endl;
 				sleep(2);
+				}
 			}
-		}
-				
-		if(init == 0){
-			//int try = 0;
-			srand(time(0));
 			int mon = random() % 10;
 			if(0 <= mon && mon <= 3){
 				monAD = 0.5 * data->play.ad;
@@ -76,12 +77,14 @@ void dungeon(Game_data* data, int* location){
 		}
 		
 		std::system("clear");
-		if(monType == 0){cout << "weak" << endl;}
-		else if(monType == 1){cout << "normal" << endl;}
-		else if(monType == 2){cout << "strong !!" << endl;}
-		else if(monType == 3){cout << " ...... " << endl;}
+		
 		cout << "[HP] " << data->play.hp << " / " << data->play.totalHP << endl;
-		cout << "[Enemy] " << monHP << " / " << totalmonHP << endl;
+		
+		if(monType == 0){cout << "[Slimer] ";}
+		else if(monType == 1){cout << "[Gorillta] " ;}
+		else if(monType == 2){cout << "[Spider Queen] ";}
+		else if(monType == 3){cout << "[Demogorgon] " ;}
+		cout << monHP << " / " << totalmonHP << endl;
 		int input;
 		float prob;
 		if(turn == 1){
