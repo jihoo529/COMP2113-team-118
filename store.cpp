@@ -11,10 +11,9 @@ void store(Game_data* data, int* location){
 	while(run == 1){
 		system("clear");
 		cout << "[LV] " << data->play.level << endl;
-		cout << "[XP] " << data->play.current_xp << "/" << data->play.max_xp << endl;
 		cout << "[HP] " << data->play.hp << "/" << data->play.totalHP << endl;
-		cout << "[AD] " << data->play.ad << endl;
 		cout << "[CP] " << data->play.cp << endl;
+		cout << "[Gold] " << data->play.money << endl;
 		cout << "------------------------------" << endl;
 		cout << "[1] Health potion - 30 gold" << endl;
 		cout << "[2] Upgrade weapon - 200 gold" << endl;
