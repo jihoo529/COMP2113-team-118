@@ -123,6 +123,13 @@ int main(){
 	}
 	location = 1;
 	while(location != 0){
+		if(hp < 0){hp = 0;}
+		if(bp > 40){bp = 40;}
+		if(cp > 60){cp = 40;}
+		if(money < 0){money = 0;}
+		if(level > 100){level = 100;}
+		
+		
 		if(location == 1){village(&data, &location);}
 		else if(location == 2){store(&data, &location);}
 		else if(location == 3){dungeon(&data, &location);}
