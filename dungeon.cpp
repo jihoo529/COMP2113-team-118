@@ -13,9 +13,15 @@ using namespace std;
 
 
 
-void dungeon(Game_data* data, int* location, int try){
+void dungeon(Game_data* data, int* location){
 	srand(time(0));
-	//int* try;	
+	//int* try;
+	int try;
+	if(try > 0){
+		try += 1;
+	}else{
+		try = 0;
+	}
  	int turn = random() % 2;
 	
 	int win = 2;
@@ -133,7 +139,7 @@ void dungeon(Game_data* data, int* location, int try){
 			cout << "-------------------------------------------------" << endl;
 			cout << "....." << endl;
 			cout << "You seriously injured... heading back to village" << endl;
-			cout << "You lost " << gold << " golds..." << endl;
+			cout << "You lost " << 20 << " golds..." << endl;
 			data->play.money -= 20;
 			run = 0;
 			win = 0;
