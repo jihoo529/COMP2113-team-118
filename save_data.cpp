@@ -24,6 +24,9 @@ void save_data(Game_data* data, int* location, int current_player){
 		++total_player;
 	}
 	else{player = current_player;}
+	cout << current_player << endl;
+	cout << total_player << endl;
+	cout << player << endl;
 	fin.close();
 	//cout << player << endl;
 	//cout << total_player << endl;
