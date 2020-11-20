@@ -29,24 +29,24 @@ void dungeon(Game_data* data, int* location){
 			srand(time(0));
 			int mon = random() % 10;
 			if(0 <= mon && mon <= 5){
-				monAD = 0.8 * data->play.ad;
-				monHP = 0.8 * data->play.hp;
-				monBP = 0.8 * data->play.bp;
+				monAD = 0.5 * data->play.ad;
+				monHP = 0.5 * data->play.hp;
+				monBP = 0.5 * data->play.bp;
 				gold = 20;
 				monType = 0;
 
 			}
 			else if(5 < mon && 9 > mon){
-				monAD = data->play.ad;
-				monHP = data->play.hp;
-				monBP = data->play.bp;
+				monAD = 0.8 * data->play.ad;
+				monHP = 0.8 * data->play.hp;
+				monBP = 0.8 * data->play.bp;
 				gold = 30;
 				monType = 1;
 			}
 			else if(mon == 9){
-				monAD = 1.2 * data->play.ad;
+				monAD = 1.5 * data->play.ad;
 				monHP = 1.2 * data->play.hp;
-				monBP = 1.2 * data->play.bp;
+				monBP = 1 * data->play.bp;
 				gold = 50;
 				monType = 2;
 			}
