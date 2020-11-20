@@ -179,6 +179,7 @@ void dungeon(Game_data* data, int* location){
 		}
 		else if(win == 0){
 			cout << "error" << endl;
+			sleep(3);
 			location[0] = 1;
 			run = 0;
 		}
