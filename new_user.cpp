@@ -35,6 +35,7 @@ void new_user(Usernames* user, Game_data* data, int* current_player, New_player 
 			data->play.level = initial.level;
 			data->play.max_xp = initial.max_xp;
 			data->play.current_xp = initial.current_xp;
+			data->play.totalHP = initial.totalHP;
 			data->play.hp = initial.hp;
 			data->play.ad = initial.ad;
 			data->play.bp = initial.bp;
