@@ -39,7 +39,7 @@ void save_data(Game_data* data, int* location){
 			line = data->play.bp + " ";
 			line = data->play.cp + " ";
 			line = data->play.nump + " ";
-			line = data->play.money;
+			line = data->play.money + '\n';
 			text[i] = line;
 			++i;
 		}
