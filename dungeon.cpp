@@ -12,10 +12,10 @@ using namespace std;
 //const stat[] = { }
 
 
-const int try = 1;
+
 void dungeon(Game_data* data, int* location){
 	srand(time(0));
-		
+	int* try;	
  	int turn = random() % 2;
 	
 	int win = 2;
