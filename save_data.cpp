@@ -26,8 +26,9 @@ void save_data(Game_data* data, int* location){
 		++total_player;
 	}
 	if(total_player == 0){++total_player;}
-	//cout << player << endl;
-	//cout << total_player << endl;
+	cout << player << endl;
+	cout << total_player << endl;
+	line.erase();
 	string* text = new string[total_player];
 	for(int i = 0; i<total_player; ++i){
 		if(i == player){
