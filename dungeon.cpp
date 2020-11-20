@@ -97,7 +97,7 @@ void dungeon(Game_data* data, int* location){
 		else if(turn == 0){//monster's turn
 			int monDamage = monAD;
 			cout << endl;
-			cout << "Monster attaced you !" << endl;
+			cout << "Monster attacked you !" << endl;
 			//cout << ult << endl;
 			if(ult % 3 == 0){
 				monDamage = 2 * monAD;
@@ -135,7 +135,7 @@ void dungeon(Game_data* data, int* location){
 			data->play.money -= gold;
 			run = 0;
 			win = 0;
-			sleep(3);
+			sleep(2);
 		}
 		if(monHP <= 0){
 			std::system("clear");
@@ -171,8 +171,7 @@ void dungeon(Game_data* data, int* location){
 			}
 		}
 		else if(win == 0){
-			cout << "error" << endl;
-			sleep(3);
+			sleep(2);
 			location[0] = 1;
 			run = 0;
 		}
