@@ -10,18 +10,13 @@
 using namespace std;
 
 //const stat[] = { }
-
+int* try = 0;
 
 
 void dungeon(Game_data* data, int* location){
 	srand(time(0));
 	//int* try;
-	int try;
-	if(try > 0){
-		try += 1;
-	}else{
-		try = 0;
-	}
+	
  	int turn = random() % 2;
 	
 	int win = 2;
@@ -31,6 +26,7 @@ void dungeon(Game_data* data, int* location){
 	while(run == 1){
 		int monAD; int monHP; float monBP; int gold; int monType; int totalmonHP;
 		if(init == 0){
+			//int try = 0;
 			srand(time(0));
 			int mon = random() % 10;
 			if(0 <= mon && mon <= 5){
@@ -170,6 +166,7 @@ void dungeon(Game_data* data, int* location){
 			cin >> input;
 			if(input == 1){
 				location[0] = 3;
+				
 				try += 1;
 				continue;
 				
