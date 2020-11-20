@@ -20,10 +20,10 @@ void save_data(Game_data* data, int* location){
 	}
 	while(getline(fin, line)){
 		int index = line.find(" ");
+		++total_player;
 		if(data->username == line.substr(0, index)){
 			player = total_player-1;
 		}
-		++total_player;
 	}
 	if(total_player == 0){++total_player;}
 	cout << player << endl;
