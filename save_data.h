@@ -4,7 +4,7 @@
 #include "common.h"
 //void save_data();
 
-void save_data(Game_data* data, int* location);
+void save_data(Game_data* data, int* location, int current_player);
 
 /*
 class Save_data{
