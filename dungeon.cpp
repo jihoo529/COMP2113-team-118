@@ -30,9 +30,9 @@ void dungeon(Game_data* data, int* location){
 	int damage;
 	int init = 0;
 	while(run == 1){
+		int monAD; int monHP; float monBP; int gold; int monType;
 		if(init == 0){
 			srand(time(0));
-			int monAD; int monHP; float monBP; int gold; int monType;
 			int mon = random() % 10;
 			if(0 <= mon && mon <= 5){
 				monAD = 0.8 * data->play.ad;
