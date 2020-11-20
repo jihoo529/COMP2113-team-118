@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 #include "save_data.h"
-//#include "common.h"
+#include "common.h"
 using namespace std;
 
 Game_data data;
