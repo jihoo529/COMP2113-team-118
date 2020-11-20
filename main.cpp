@@ -128,7 +128,7 @@ int main(){
 		if(data.play.cp > 60){data.play.cp = 40;}
 		if(data.play.money < 0){data.play.money = 0;}
 		if(data.play.level > 100){data.play.level = 100;}
-		
+		if(data.play.nump < 0){data.play.nump = 0;}
 		
 		if(location == 1){village(&data, &location);}
 		else if(location == 2){store(&data, &location);}
