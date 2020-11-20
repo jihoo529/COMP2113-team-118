@@ -23,7 +23,7 @@ void dungeon(Game_data* data, int* location){
 	int damage;
 	int init = 0; 
 	while(run == 1){
-		int monAD; int monHP; float monBP; int gold; int monType; int totalmonHP; int winXP; string monName;
+		int monAD; int monHP; float monBP; int gold; int monType; int totalmonHP; int winXP; string monName = "";
 		
 				
 		if(init == 0){
