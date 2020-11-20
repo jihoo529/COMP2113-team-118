@@ -42,7 +42,7 @@ struct Usernames{
 void tutorial(){
 	int run = 1;
 	while(run == 1){
-		system("clear");
+		system("clear");/*
 		cout << "$$$~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$$$" << endl;
 		cout << "		     Welcome to our village !" << endl;
 		sleep(1.5);
@@ -57,7 +57,7 @@ void tutorial(){
 		cout << "But if you lose, you have to go back to village. Enemy will take some gold from you" << endl; sleep(2);
 		system("clear");
 		cout << "Then..... GOOD LUCK !!!" << endl;
-		cout << endl;
+		cout << endl;*/
 		cout << "Do you want to go through the tutorial again? [1] Yes [2] No" << endl;
 		int input;
 		cin >> input;
