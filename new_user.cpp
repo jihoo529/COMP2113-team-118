@@ -10,11 +10,11 @@ New_player initial;
 int current_player;
 
 void new_user(Usernames* user, Game_data* data, int* current_player, New_player initial){
-	cout << "Username : " << endl;
-	string newname;
-	cin >> newname;
+	cout << "Username : ";
 	bool run = 1;
 	while(run == 1){
+		string newname;
+		cin >> newname;
 		int count = 0;
 		for(int i = 0; i<user->num; ++i){
 			if(user->user[i] == newname){
@@ -22,8 +22,14 @@ void new_user(Usernames* user, Game_data* data, int* current_player, New_player 
 			}
 			else{++count;}
 		}
-		if(user->num == count){
-			user->user[user->num] = newname;
+		if((user->num+1) == count){
+			string* temp = new string[user->num +1];
+			for(i = 0; i<user->num; ++i){
+				temp[i] = user->user[i];
+			}
+			temp[user->num] = newname;
+			user->user = temp;
+			delete[] temp;
 			data->username = user->user[user->num];
 			data->play.level = initial.level;
 			data->play.max_xp = initial.max_xp;
