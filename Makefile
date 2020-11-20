@@ -22,7 +22,7 @@ dungeon.o: dungeon.cpp dungeon.h
 main.o: main.cpp village.h new_user.h load_data.h store.h dungeon.h 
 	g++ $(FLAGS) -c $<
 
-main: village.o new_user.o load_data.o store.o dungeon.o main.o
+main: village.o save_data.o new_user.o load_data.o store.o dungeon.o main.o
 	g++ $(FLAGS) $^ -o $@
 clean:
 	rm -f *.o main
