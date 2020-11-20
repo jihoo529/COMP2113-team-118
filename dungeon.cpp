@@ -92,11 +92,13 @@ void dungeon(Game_data* data, int* location){
 				if(data->play.nump < 1){
 					cout << "Not enough health potion !" << endl;
 					turn = 1;
+					sleep(2);
 					continue;
 				}
 				else{
-					cout << (data->play.totalHP-data->play.hp) *0.8 << " healed !" << endl;
-					data->play.hp = (data->play.totalHP - data->play.hp)*0.8 + data->play.hp ;//Reset HP
+					int heal_amount = (data->play.totalHP-data->play.hp) *0.8;
+					cout << heal_amount << " healed !" << endl;
+					data->play.hp = heal_amount + data->play.hp ;//Reset HP
 					data->play.nump -= 1;
 				}
 			}
