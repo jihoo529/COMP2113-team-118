@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include "new_user.h"
-//#include "common.h"
+#include "common.h"
 using namespace std;
 
 Usernames user;
