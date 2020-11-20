@@ -10,9 +10,9 @@ New_player initial;
 int current_player;
 
 void new_user(Usernames* user, Game_data* data, int* current_player, New_player initial){
-	cout << "Username : ";
 	bool run = 1;
 	while(run == 1){
+		cout << "Username : ";
 		string newname;
 		cin >> newname;
 		int count = 0;
