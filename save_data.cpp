@@ -31,11 +31,11 @@ void save_data(Game_data* data, int* location, int current_player){
 	//cout << total_player << endl;
 	//cout << player << endl;
 	fin.close();
-	line.erase();
 	string* text = new string[total_player];
 	fin.open("game_users.txt");
 	for(int i = 0; i<total_player; ++i){
 		if(i == player){
+			line.erase();
 			line += data->username + " ";
 			line += to_string(data->play.level) + " ";
 			line += to_string(data->play.max_xp) + " ";
@@ -48,7 +48,7 @@ void save_data(Game_data* data, int* location, int current_player){
 			line += to_string(data->play.nump) + " ";
 			line += to_string(data->play.money);
 			text[i] = line;
-			cout << text[i] << endl;
+			getline(fin, text[i]);
 		}
 		else{getline(fin, text[i]);}
 	}
