@@ -13,9 +13,10 @@ void load_data(int current_player, Usernames user, Game_data* data){
 		exit(1);
 	}
 	string* text = new string[user.num];
-	for(int i =0; i<user.num; ++i){
+	for(int i=0; i<user.num; ++i){
 		getline(fin, text[i]);
 	}
+	fin.close();
 	for(int i=0; i<user.num; ++i){
 		if(i == current_player){
 			line = text[i];
@@ -50,8 +51,8 @@ void load_data(int current_player, Usernames user, Game_data* data){
 			data->play.nump = std::stoi(line.substr(0, index));
 			line = line.erase(0, index+1);
 			data->play.money = std::stoi(line);
+			break;
 		}
 	}
 	delete[] text;
-	fin.close();
 }
