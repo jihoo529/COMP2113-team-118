@@ -121,7 +121,7 @@ void dungeon(Game_data* data, int* location){
 						damage = data->play.ad;
 					}
 
-					cout << damage << " damage dealt !" << endl;
+					cout << damage << " damage dealt to enemy!" << endl;
 					//cout << monHP - damage << "/" << monHP << endl; ; //damage dealt to monster
 					monHP = monHP - damage;
 				}
@@ -147,7 +147,7 @@ void dungeon(Game_data* data, int* location){
 		else if(turn == 0){//monster's turn
 			int monDamage = monAD;
 			cout << endl;
-			cout << "Monster attacked you !" << endl;
+			cout << monName <<" attacked you !" << endl;
 			//cout << ult << endl;
 			if(ult % 3 == 0){
 				monDamage = 1.2 * monAD;
@@ -161,9 +161,9 @@ void dungeon(Game_data* data, int* location){
 			}else{
 				if(ult % 3 == 0){
 					cout << "Enemy got angree !" << endl;
-					cout << "Damaged by " << monDamage <<"!!!" << endl; //monster gives double damage every 3 times of attack
+					cout << "You are damaged by " << monDamage <<"!!!" << endl; //monster gives double damage every 3 times of attack
 				}else{
-					cout << "Damaged by " << monDamage <<"!"<< endl;
+					cout << "You are damaged by " << monDamage <<"!"<< endl;
 				}
 				data->play.hp = data->play.hp - monDamage;
 				//cout << "[HP] " << HP << " / " << totalHP << endl;
