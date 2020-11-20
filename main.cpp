@@ -13,7 +13,7 @@ using namespace std;
 
 void village(Game_data*, int*);
 
-extern int location;
+//extern int location;
 const int MAXHP = 10000;
 const int MAXAD = 10000;
 const int MAXBP = 40;
