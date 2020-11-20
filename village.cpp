@@ -15,7 +15,7 @@ void village(Game_data* data, int* location){
 	system("clear");
 	ofstream fout;
 	int sel = 0;
-	cout << "Welcome to village " << data->username <<  endl;
+	cout << "Welcome to village " << data->username << endl;
 	cout << "[LV] " << data->play.level << endl;
 	cout << "[XP] " << data->play.current_xp << "/" << data->play.max_xp << endl;
 	cout << "[HP] " << data->play.hp << "/" << data->play.totalHP << endl;
