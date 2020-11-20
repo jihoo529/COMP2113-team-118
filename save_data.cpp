@@ -10,8 +10,8 @@ using namespace std;
 void save_data(Game_data* data, int* location){
 	ifstream fin;
 	ofstream fout;
-	int total_player=0;
-	int player=0;
+	int total_player=1; //initially 0
+	int player=1; //initially 0
 	string line;
 	fin.open("game_users.txt");
 	if(fin.fail()){
