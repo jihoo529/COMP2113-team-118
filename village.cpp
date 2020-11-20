@@ -23,6 +23,6 @@ void village(Game_data* data, int* location){
 		cout << "Healed... [HP] " << data->play.hp << " / " << data->play.totalHP << endl;
 	}
 	else if(sel == 4){
-		save_data(data, location);
+		save_data(data, location[0]);
 	}
 }
