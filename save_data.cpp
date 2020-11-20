@@ -28,10 +28,9 @@ void save_data(Game_data* data, int* location){
 		else{++count;}
 	}
 	if(total_player == count){
-		++count;
 		player = count;
 	}
-	else{++count;}
+	++count;
 	//cout << player << endl;
 	//cout << total_player << endl;
 	string* text = new string[count];
