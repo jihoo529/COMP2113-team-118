@@ -12,6 +12,7 @@ void store(Game_data* data, int* location){
 		system("clear");
 		cout << "[LV] " << data->play.level << endl;
 		cout << "[HP] " << data->play.hp << "/" << data->play.totalHP << endl;
+		cout << "[Potion] " << data->play.nump << endl;
 		cout << "[CP] " << data->play.cp << endl;
 		cout << "[Gold] " << data->play.money << endl;
 		cout << "------------------------------" << endl;
