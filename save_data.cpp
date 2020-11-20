@@ -20,8 +20,8 @@ void save_data(Game_data* data, int* location){
 	}
 	while(getline(fin, line)){
 		int index = line.find(" ");
-		if(data.username == line.substr(0, index)){
-			player = i;
+		if(data->username == line.substr(0, index)){
+			player = index;
 		}
 		++total_player;
 	}
@@ -57,9 +57,9 @@ void save_data(Game_data* data, int* location){
 	cout << "Continue? [1] Yes [2] Quit" << endl;
 	int sel = 0;
 	if(sel == 1){
-		location = 1;
+		location[0] = 1;
 	}
 	else if(sel == 2){
-		location = 0;
+		location[0] = 0;
 	}
 }
