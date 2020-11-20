@@ -23,7 +23,7 @@ void dungeon(Game_data* data, int* location){
 	int damage;
 	int init = 0; 
 	while(run == 1){
-		int monAD; int monHP; float monBP; int gold; int monType; int totalmonHP; int winXP;
+		int monAD; int monHP; float monBP; int gold; int monType; int totalmonHP; int winXP; string monName;
 		
 				
 		if(init == 0){
@@ -39,6 +39,7 @@ void dungeon(Game_data* data, int* location){
 				monHP = 1.5* data->play.totalHP;
 				monBP = data->play.bp;
 				monType = 3;
+				monName = "Demogorgon";
 				
 			}//boss stage
 			else if(sel == 2){
@@ -47,30 +48,33 @@ void dungeon(Game_data* data, int* location){
 				}
 			}
 			int mon = random() % 10;
-			if(0 <= mon && mon <= 3){
+			if(0 <= mon && mon <= 3 && monType != 3){
 				monAD = 0.5 * data->play.ad;
 				monHP = 0.5 * data->play.totalHP;
 				monBP = 0.5 * data->play.bp;
 				gold = 20;
 				monType = 0;
 				winXP = 15;
+				monName = "Slimer";
 
 			}
-			else if(3 < mon && 9 > mon){
+			else if(3 < mon && 9 > mon && monType != 3){
 				monAD = 0.8 * data->play.ad;
 				monHP = 0.8 * data->play.totalHP;
 				monBP = 0.8 * data->play.bp;
 				gold = 30;
 				monType = 1;
 				winXP = 25;
+				monName = "Gorillta";
 			}
-			else if(mon == 9){
+			else if(mon == 9 && monType != 3){
 				monAD = 1.2 * data->play.ad;
 				monHP = 1.2 * data->play.totalHP;
 				monBP = 1 * data->play.bp;
 				gold = 100;
 				monType = 2;
 				winXP = 50;
+				monName = "Spider Queen";
 			}
 			totalmonHP = monHP;
 			init = 1;
