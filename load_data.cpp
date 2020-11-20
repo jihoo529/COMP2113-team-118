@@ -12,9 +12,13 @@ void load_data(int current_player, Usernames user, Game_data* data){
 	if(fin.fail()){
 		exit(1);
 	}
+	string text[user.num];
+	for(int i =0; i<user.num; ++i){
+		getline(fin, text[i]);
+	}
 	for(int i=0; i<user.num; ++i){
 		if(i == current_player){
-			getline(fin, line);
+			line = text[i];
 			int index = line.find(" ");
 			data->username = line.substr(0, index);
 			line = line.erase(0, index+1);
