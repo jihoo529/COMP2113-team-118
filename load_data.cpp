@@ -2,7 +2,7 @@
 #include <string>
 #include <fstream>
 #include "load_data.h"
-//#include "common.h"
+#include "common.h"
 using namespace std;
 
 void load_data(int current_player, Usernames user, Game_data* data){
