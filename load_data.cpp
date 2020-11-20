@@ -12,7 +12,7 @@ void load_data(int current_player, Usernames user, Game_data* data){
 	if(fin.fail()){
 		exit(1);
 	}
-	string text[user.num];
+	string* text = new string[user.num];
 	for(int i =0; i<user.num; ++i){
 		getline(fin, text[i]);
 	}
@@ -52,5 +52,6 @@ void load_data(int current_player, Usernames user, Game_data* data){
 			data->play.money = std::stoi(line);
 		}
 	}
+	delete[] text;
 	fin.close();
 }
