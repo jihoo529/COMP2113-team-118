@@ -5,7 +5,7 @@
 //#include "common.h"
 using namespace std;
 
-Game_data data;
+//Game_data data;
 
 void save_data(Game_data* data, int* location){
 	ifstream fin;
