@@ -143,7 +143,7 @@ void dungeon(Game_data* data, int* location){
 			cout << "ENEMY: [HP] 0 / " << totalmonHP << endl;
 			cout << "You defeated the monster!" << endl;
 			cout << winXP << " xp gained !" << endl;
-			cout << gold << " gained !" << endl;
+			cout << gold << " gold gained !" << endl;
 			data->play.money += gold;
 			//level up
 			if(data->play.current_xp + winXP > data->play.max_xp){
