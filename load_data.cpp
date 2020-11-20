@@ -42,6 +42,10 @@ void load_data(int current_player, Usernames user, Game_data* data){
 			index = line.find(" ");
 			data->play.cp = std::stoi(line.substr(0, index));
 			line = line.erase(0, index);
+			index = line.find(" ");
+			data->play.nump = std::stoi(line.substr(0, index));
+			line = line.erase(0, index);
+			index = line.find(" ");
 			data->play.money = std::stoi(line);
 		}
 	}
