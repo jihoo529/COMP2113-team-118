@@ -76,6 +76,7 @@ int main(){
 	Usernames user;
 	Game_data data;
 	int current_player = -1;
+	system("clear");
 	cout << "Welcome to Dungeon" << endl;
 	cout << "[1] New Player [2] Continue" << endl;
 	ifstream fin;
