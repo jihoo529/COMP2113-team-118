@@ -156,7 +156,7 @@ void dungeon(Game_data* data, int* location){
 			cout << "1.Yes 2.No" << endl;
 			cin >> input;
 			if(input == 1){
-				location[0] = 2;
+				location[0] = 3;
 				continue;
 				
 			}
