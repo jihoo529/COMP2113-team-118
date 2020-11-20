@@ -44,17 +44,17 @@ void tutorial(){
 	while(run == 1){
 		system("clear");
 		cout << "$$$~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$$$" << endl;
-		cout << "			Welcome to our village !" << endl;
+		cout << "		     Welcome to our village !" << endl;
 		sleep(1.5);
-		cout << "You can either travel dungeon or visit store in this village." << endl;
-		cout << "[Store] You can buy health potions or upgrade your weapon in the store." << endl;
-		cout << "If you upgrade your weapon, it will give a critical damage to enemy more often." << endl;
+		cout << "You can either travel dungeon or visit store in this village." << endl; sleep(1);
+		cout << "[Store] You can buy health potions or upgrade your weapon in the store." << endl; sleep(1);
+		cout << "If you upgrade your weapon, it will give a critical damage to enemy more often." << endl; sleep(2);
 		system("clear");
-		cout << "[Dungeon] There are 3 types of monsters in dungeon. A weak, normal, and a mini boss" << endl;
-		cout << "Stronger monsters will give more golds if you defeat them." << endl;
-		cout << "You can level up and earn gold if you defeat your enemy. Your abilities will then be enhanced" << endl;
-		cout << "You can either further travel the dungeon or go back to village if you defeat. Bonus gold will be given if you further travel the dungeon." << endl;
-		cout << "But if you lose, you have to go back to village. Enemy will take some gold from you" << endl;
+		cout << "[Dungeon] There are 3 types of monsters in dungeon. A weak, normal, and a mini boss" << endl; sleep(1);
+		cout << "Stronger monsters will give more golds if you defeat them." << endl; sleep(1);
+		cout << "You can level up and earn gold if you defeat your enemy. Your abilities will then be enhanced" << endl; sleep(1);
+		cout << "You can either further travel the dungeon or go back to village if you defeat. Bonus gold will be given if you further travel the dungeon." << endl; sleep(1);
+		cout << "But if you lose, you have to go back to village. Enemy will take some gold from you" << endl; sleep(2);
 		system("clear");
 		cout << "Then..... GOOD LUCK !!!" << endl;
 		cout << endl;
