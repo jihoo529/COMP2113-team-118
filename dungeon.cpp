@@ -21,9 +21,9 @@ void dungeon(Game_data* data, int* location){
 	int win = 2;
 	int run = 1; int ult = 1;
 	int damage;
-	int init = 0;
+	int init = 0; 
 	while(run == 1){
-		int monAD; int monHP; float monBP; int gold; int monType; int totalmonHP;
+		int monAD; int monHP; float monBP; int gold; int monType; int totalmonHP; int winXP;
 		if(init == 0){
 			//int try = 0;
 			srand(time(0));
@@ -34,6 +34,7 @@ void dungeon(Game_data* data, int* location){
 				monBP = 0.5 * data->play.bp;
 				gold = 20;
 				monType = 0;
+				winXP = 15;
 
 			}
 			else if(3 < mon && 9 > mon){
@@ -42,6 +43,7 @@ void dungeon(Game_data* data, int* location){
 				monBP = 0.8 * data->play.bp;
 				gold = 30;
 				monType = 1;
+				winXP = 25;
 			}
 			else if(mon == 9){
 				monAD = 1.5 * data->play.ad;
@@ -49,6 +51,7 @@ void dungeon(Game_data* data, int* location){
 				monBP = 1 * data->play.bp;
 				gold = 50;
 				monType = 2;
+				winXP = 50;
 			}
 			totalmonHP = monHP;
 			init = 1;
@@ -61,7 +64,7 @@ void dungeon(Game_data* data, int* location){
 		cout << "[HP] " << data->play.hp << " / " << data->play.totalHP << endl;
 		cout << "[Enemy] " << monHP << " / " << totalmonHP << endl;
 		int input;
-		int winXP = 25; float prob;
+		float prob;
 		if(turn == 1){
 			cout << endl;
 			cout << "What will you do ?" << endl;
@@ -164,6 +167,10 @@ void dungeon(Game_data* data, int* location){
 			if(data->play.current_xp + winXP >= data->play.max_xp){
 				data->play.current_xp = data->play.current_xp + winXP - data->play.max_xp;
 				data->play.level ++;
+				data->play.totalHP += 20;
+				data->play.ad += 5;
+				data->play.bp += 5;
+				data->play.max_xp = data->play.max_xp * 1.5;
 				cout << "Level up ! Level : " << data->play.level << endl;
 			}else{
 				data->play.current_xp += winXP;
