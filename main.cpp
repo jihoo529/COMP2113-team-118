@@ -43,7 +43,8 @@ void tutorial(){
 	int run = 1;
 	while(run == 1){
 		system("clear");
-		cout << "Welcome to our village !" << endl;
+		cout << "$$$~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$$$" << endl;
+		cout << "			Welcome to our village !" << endl;
 		sleep(1.5);
 		cout << "You can either travel dungeon or visit store in this village." << endl;
 		cout << "[Store] You can buy health potions or upgrade your weapon in the store." << endl;
