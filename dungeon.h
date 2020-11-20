@@ -3,6 +3,6 @@
 #include "common.h"
 
 
-void dungeon(Game_data* data, int* location, int try);
+void dungeon(Game_data* data, int* location);
 
 #endif
