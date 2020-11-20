@@ -25,6 +25,8 @@ void save_data(Game_data* data, int* location){
 		}
 		++total_player;
 	}
+	cout << player << endl;
+	cout << total_player << endl;
 	line.erase();
 	string* text = new string[total_player];
 	for(int i = 0; i<total_player; ++i){
@@ -41,9 +43,8 @@ void save_data(Game_data* data, int* location){
 			line = data->play.nump + " ";
 			line = data->play.money;
 			text[i] = line;
-			continue;
 		}
-		getline(fin, text[i]);
+		else{getline(fin, text[i]);}
 	}
 	fin.close();
 	fout.open("game_users.txt");
