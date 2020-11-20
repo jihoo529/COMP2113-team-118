@@ -53,7 +53,8 @@ void save_data(Game_data* data, int* location){
 		exit(1);
 	}
 	for(int i = 0; i<total_player; ++i){
-		fout << text[i] << endl;
+		fout << text[i];
+		if(i<(total_player-1)){cout << endl;}
 	}
 	fout.close();
 	cout << "Continue? [1] Yes [2] Quit" << endl;
