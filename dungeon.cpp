@@ -100,7 +100,7 @@ void dungeon(Game_data* data, int* location){
 			cout << "Monster attacked you !" << endl;
 			//cout << ult << endl;
 			if(ult % 3 == 0){
-				monDamage = 1.5 * monAD;
+				monDamage = 1.2 * monAD;
 			}else{
 				monDamage = monAD;
 			}
