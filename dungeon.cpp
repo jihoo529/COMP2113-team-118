@@ -39,7 +39,7 @@ void dungeon(Game_data* data, int* location){
 			}
 			else if(3 < mon && 9 > mon){
 				monAD = 0.8 * data->play.ad;
-				monHP =   data->play.totalHP;
+				monHP = 0.8 * data->play.totalHP;
 				monBP = 0.8 * data->play.bp;
 				gold = 30;
 				monType = 1;
@@ -49,7 +49,7 @@ void dungeon(Game_data* data, int* location){
 				monAD = 1.5 * data->play.ad;
 				monHP = 1.2 * data->play.totalHP;
 				monBP = 1 * data->play.bp;
-				gold = 50;
+				gold = 100;
 				monType = 2;
 				winXP = 50;
 			}
