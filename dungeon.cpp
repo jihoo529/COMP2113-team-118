@@ -129,6 +129,7 @@ void dungeon(Game_data* data, int* location){
 			std::system("clear");
 			cout << "YOU: [HP] 0 / " << data->play.totalHP << endl;
 			cout << "ENEMY: [HP] " << monHP << " / " << totalmonHP << endl;
+			cout << "-------------------------------------------------" << endl;
 			cout << "....." << endl;
 			cout << "You seriously injured... heading back to village" << endl;
 			cout << "You lost " << gold << " golds..." << endl;
@@ -141,6 +142,7 @@ void dungeon(Game_data* data, int* location){
 			std::system("clear");
 			cout << "YOU: [HP] " << data->play.hp << " / " << data->play.totalHP << endl;
 			cout << "ENEMY: [HP] 0 / " << totalmonHP << endl;
+			cout << "-------------------------------------------------" << endl;
 			cout << "You defeated the monster!" << endl;
 			cout << winXP << " xp gained !" << endl;
 			cout << gold << " gold gained !" << endl;
