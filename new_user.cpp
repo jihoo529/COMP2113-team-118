@@ -24,7 +24,7 @@ void new_user(Usernames* user, Game_data* data, int* current_player, New_player 
 		}
 		if((user->num+1) == count){
 			string* temp = new string[user->num +1];
-			for(i = 0; i<user->num; ++i){
+			for(int i = 0; i<user->num; ++i){
 				temp[i] = user->user[i];
 			}
 			temp[user->num] = newname;
