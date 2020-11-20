@@ -7,8 +7,8 @@
 #include "village.h"
 #include "store.h"
 #include "dungeon.h"
-#include "common.h"
-#include "save_data.h"
+//#include "common.h"
+//#include "save_data.h"
 using namespace std;
 
 void village(Game_data*, int*);
