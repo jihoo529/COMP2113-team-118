@@ -31,10 +31,12 @@ void save_data(Game_data* data, int* location){
 		player = count;
 	}
 	++count;
+	fin.close();
 	//cout << player << endl;
 	//cout << total_player << endl;
 	string* text = new string[count];
 	line.erase();
+	fin.open("game_users.txt");
 	for(int i = 0; i<count; ++i){
 		if(i == player){
 			line += data->username + " ";
