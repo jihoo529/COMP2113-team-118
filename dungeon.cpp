@@ -171,12 +171,14 @@ void dungeon(Game_data* data, int* location, int try){
 			else if(input == 2){
 				location[0] = 1;
 				cout << "Returning to village ... " << endl;
+				try = 0;
 				run = 0;
 			}
 		}
 		else if(win == 0){
 			sleep(2);
 			location[0] = 1;
+			try = 0;
 			run = 0;
 		}
 		
