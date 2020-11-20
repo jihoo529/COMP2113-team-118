@@ -36,7 +36,7 @@ struct New_player{
 };
 struct Usernames{
 	int num = 0;
-	string *user = new string [num];
+	string *user = new string [0];
 };
 */
 void tutorial(){
@@ -94,16 +94,15 @@ int main(){
 	else{
 		while(getline(fin, line)){
 			if(line.length() == 0){break;}
-			int index = line.find(" ");
-			string p = line.substr(0, index);
-			string* temp = new string[user.num + 1];
+			string* temp = user.user;
+			user.user = new string[user.num+1];
 			for(int i = 0; i<user.num; ++i){
-				temp[i] = user.user[i];
+				user.user[i] = temp[i];
 			}
-			temp[user.num] = p;
+			delete[] temp;
+			int index = line.find(" ");
+			user.user[user.num] = line.substr(0, index);
 			++user.num;
-			user.user = temp;
-			delete[] &temp;
 		}
 		fin.close();
 	}
