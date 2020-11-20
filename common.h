@@ -3,23 +3,7 @@
 #include <string>
 struct Player{
 	int level, max_xp, current_xp, totalHP, hp, ad, bp, cp, money;
-	if(hp < 0){
-		hp = 0;
-	}
-	if(bp > 40){
-		bp = 40;
-	}
-	if(cp > 60){
-		cp = 40;
-	}
-	if(money < 0){
-		money = 0;
-	}
-	if(level > 100){
-		level = 100;
-	}
 	
-		
 };
 
 struct Game_data{
