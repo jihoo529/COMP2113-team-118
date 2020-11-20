@@ -1,7 +1,7 @@
 #include <iostream>
 #include <unistd.h>
 #include "store.h"
-//#include "common.h"
+#include "common.h"
 using namespace std;
 
 void store(Game_data* data, int* location){
