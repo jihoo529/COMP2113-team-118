@@ -114,6 +114,7 @@ int main(){
 		//tutorial();
 	}
 	else if(sel == 2){
+		cout << "Enter the number beside your username" << endl;
 		for(int i = 0; i<user.num; ++i){
 			cout << "[" << i << "] " << user.user[i] << endl;
 		}
