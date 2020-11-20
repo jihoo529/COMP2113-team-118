@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <unistd.h>
 #include "village.h"
 #include "save_data.h"
 //#include "common.h"
@@ -11,6 +12,7 @@ using namespace std;
 //void save_data(Game_data* data, int* location);
 
 void village(Game_data* data, int* location){
+	system("clear");
 	ofstream fout;
 	int sel = 0;
 	cout << "Welcome to village" << endl;
