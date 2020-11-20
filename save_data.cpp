@@ -12,7 +12,6 @@ void save_data(Game_data* data, int* location, int current_player){
 	ofstream fout;
 	int total_player = 0; //initially 0
 	int player = 0; //initially 0
-	string line;
 	fin.open("game_users.txt");
 	if(fin.fail()){
 		cout << "There was a problem in accessing the game memory (1)" << endl;
@@ -35,7 +34,7 @@ void save_data(Game_data* data, int* location, int current_player){
 	fin.open("game_users.txt");
 	for(int i = 0; i<total_player; ++i){
 		if(i == player){
-			line = data->username + " ";
+			string line = data->username + " ";
 			line += to_string(data->play.level) + " ";
 			line += to_string(data->play.max_xp) + " ";
 			line += to_string(data->play.current_xp) + " ";
