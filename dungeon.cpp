@@ -95,12 +95,12 @@ void dungeon(Game_data* data, int* location){
 		}
 		
 		else if(turn == 0){//monster's turn
-			int monDamage = monAD;
+			float monDamage = monAD;
 			cout << endl;
 			cout << "Monster attacked you !" << endl;
 			//cout << ult << endl;
 			if(ult % 3 == 0){
-				monDamage = 2 * monAD;
+				monDamage = 1.5 * monAD;
 			}else{
 				monDamage = monAD;
 			}
