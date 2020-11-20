@@ -16,16 +16,8 @@ void dungeon(Game_data* data, int* location){
 	srand(time(0));
 		
  	int turn = random() % 2;
-	//int totalHP = stat[INDEX];//totalHP = initial HP 
-	//int totHP = data.hp;
-
 	
 	int win;
-	if(turn == 1){
-		turn = 1;
-	}else{turn = 0;}
-	
-	
 	int run = 1; int ult = 1;
 	int damage;
 	int init = 0;
