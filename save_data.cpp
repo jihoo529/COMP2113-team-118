@@ -21,7 +21,7 @@ void save_data(Game_data* data, int* location){
 	while(getline(fin, line)){
 		int index = line.find(" ");
 		if(data->username == line.substr(0, index)){
-			player = index;
+			player = total_player;
 		}
 		++total_player;
 	}
