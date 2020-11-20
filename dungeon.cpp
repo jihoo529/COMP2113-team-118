@@ -12,7 +12,7 @@ using namespace std;
 //const stat[] = { }
 
 
-int try = 1;
+const int try = 1;
 void dungeon(Game_data* data, int* location){
 	srand(time(0));
 		
