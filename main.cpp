@@ -12,7 +12,7 @@
 using namespace std;
 
 void village(Game_data*, int*);
-
+int location;
 //extern int location;
 const int MAXHP = 10000;
 const int MAXAD = 10000;
