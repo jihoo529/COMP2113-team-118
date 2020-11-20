@@ -38,6 +38,7 @@ void save_data(Game_data* data, int* location){
 			line = data->play.ad + " ";
 			line = data->play.bp + " ";
 			line = data->play.cp + " ";
+			line = data->play.nump + " ";
 			line = data->play.money;
 			text[i] = line;
 			++i;
