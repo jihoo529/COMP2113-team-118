@@ -96,7 +96,8 @@ void dungeon(Game_data* data, int* location){
 				}
 				else{
 					cout << (data->play.totalHP-data->play.hp) *0.8 << " healed !" << endl;
-					data->play.hp = (data->play.totalHP - data->play.hp)*0.8 + data->play.hp ; //Reset HP
+					data->play.hp = (data->play.totalHP - data->play.hp)*0.8 + data->play.hp ;//Reset HP
+					data->play.nump -= 1;
 				}
 			}
 			turn = 0;
