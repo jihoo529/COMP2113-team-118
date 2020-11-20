@@ -115,7 +115,7 @@ int main(){
 	}
 	else if(sel == 2){
 		for(int i = 0; i<user.num; ++i){
-			cout << "[" << i << "]" << user.user[i] << endl;
+			cout << "[" << i << "] " << user.user[i] << endl;
 		}
 		cin >> current_player;
 		load_data(current_player, user, &data);
