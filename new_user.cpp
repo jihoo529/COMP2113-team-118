@@ -21,7 +21,7 @@ void new_user(Usernames* user, Game_data* data, int* current_player, New_player 
 				cout << "This username is unavailable." << endl;
 			}
 			else{++count;}
-		}
+		}//end of for loop 1
 		if((user->num+1) == count){
 			string* temp = new string[user->num +1];
 			for(int i = 0; i<user->num; ++i){
@@ -41,7 +41,8 @@ void new_user(Usernames* user, Game_data* data, int* current_player, New_player 
 			data->play.money = initial.money;
 			current_player[0] = user->num;
 			++user->num;
-			run = 0;
+			//run = 0;
 		}
+		run = 0;
 	}
 }
