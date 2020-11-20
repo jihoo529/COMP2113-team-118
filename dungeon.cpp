@@ -158,14 +158,17 @@ void dungeon(Game_data* data, int* location){
 			cout << "You defeated the monster!" << endl;
 			cout << winXP << " xp gained !" << endl;
 			cout << gold << " gold gained !" << endl;
-			data->play.current_xp += winXP;
+			//
 			data->play.money += gold;
 			//level up
 			if(data->play.current_xp + winXP >= data->play.max_xp){
 				data->play.current_xp = data->play.current_xp + winXP - data->play.max_xp;
 				data->play.level ++;
 				cout << "Level up ! Level : " << data->play.level << endl;
+			}else{
+				data->play.current_xp += winXP;
 			}
+				
 			run = 0;
 			win = 1;
 		}
