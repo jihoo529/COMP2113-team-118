@@ -81,7 +81,10 @@ int main(){
 	ifstream fin;
 	string line;
 	fin.open("game_users.txt");
-	if(fin.fail()){exit(1);}
+	if(fin.fail()){
+		cout << "Cannot access game memory." << endl;
+		exit(1);
+	}
 	while(getline(fin, line)){
 		int index = line.find(" ");
 		string p = line.substr(0, index);
