@@ -23,7 +23,7 @@ struct New_player{
 
 struct Usernames{
 	int num = 0;
-	std::string *user = new std::string [num];
+	std::string *user = new std::string [0];
 };
 
 #endif
