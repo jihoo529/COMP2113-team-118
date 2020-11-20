@@ -31,7 +31,7 @@ void save_data(Game_data* data, int* location){
 	string* text = new string[total_player];
 	for(int i = 0; i<total_player; ++i){
 		if(i == player){
-			line += to_string(data->username) + " ";
+			line += data->username + " ";
 			line += to_string(data->play.level) + " ";
 			line += to_string(data->play.max_xp) + " ";
 			line += to_string(data->play.current_xp) + " ";
