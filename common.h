@@ -2,7 +2,7 @@
 #define COMMON_H
 #include <string>
 struct Player{
-	int level, max_xp, current_xp, totalHP, hp, ad, bp, cp, money;
+	int level, max_xp, current_xp, totalHP, hp, ad, bp, cp, money, nump;
 	
 };
 
@@ -18,6 +18,7 @@ struct New_player{
 	int totalHP = 50, hp = 50, ad = 10, bp = 10;
 	int cp = 0;
 	int money = 100;
+	int nump = 3;
 };
 
 struct Usernames{
