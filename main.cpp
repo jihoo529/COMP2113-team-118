@@ -53,7 +53,7 @@ void tutorial(){
 		cout << "[Dungeon] There are 3 types of monsters in dungeon. A weak, normal, and a mini boss" << endl;
 		cout << "Stronger monsters will give more golds if you defeat them." << endl;
 		cout << "You can level up and earn gold if you defeat your enemy. Your abilities will then be enhanced" << endl;
-		cout << "You can either further travel the dungeon or go back to village if you defeat. Bonus gold will be given if you further travel the dungeon." << cout;
+		cout << "You can either further travel the dungeon or go back to village if you defeat. Bonus gold will be given if you further travel the dungeon." << endl;
 		cout << "But if you lose, you have to go back to village. Enemy will take some gold from you" << endl;
 		system("clear");
 		cout << "Then..... GOOD LUCK !!!" << endl;
