@@ -123,11 +123,11 @@ int main(){
 	}
 	location = 1;
 	while(location != 0){
-		if(data->play.hp < 0){data->play.hp = 0;}
-		if(data->play.bp > 40){data->play.bp = 40;}
-		if(data->play.cp > 60){data->play.cp = 40;}
-		if(data->play.money < 0){data->play.money = 0;}
-		if(data->play.level > 100){data->play.level = 100;}
+		if(data.play.hp < 0){data.play.hp = 0;}
+		if(data.play.bp > 40){data.play.bp = 40;}
+		if(data.play.cp > 60){data.play.cp = 40;}
+		if(data.play.money < 0){data.play.money = 0;}
+		if(data.play.level > 100){data.play.level = 100;}
 		
 		
 		if(location == 1){village(&data, &location);}
