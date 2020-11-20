@@ -79,13 +79,21 @@ int main(){
 	cout << "Welcome to Dungeon" << endl;
 	cout << "[1] New Player [2] Continue" << endl;
 	ifstream fin;
+	ofstream fout:
 	string line;
+	fout.open("game_users.txt");
+	if(fin.fail()){
+		cout << "Cannot access game memory (1)" << endl;
+		exit(1);
+	}
+	fout.close();
 	fin.open("game_users.txt");
 	if(fin.fail()){
-		cout << "Cannot access game memory." << endl;
+		cout << "Cannot access game memory (2)" << endl;
 		exit(1);
 	}
 	while(getline(fin, line)){
+		if(line.length() == 0){break;}
 		int index = line.find(" ");
 		string p = line.substr(0, index);
 		string* temp = new string[user.num + 1];
@@ -97,6 +105,7 @@ int main(){
 		user.user = temp;
 		delete[] &temp;
 	}
+	fin.close();
 	int sel = 0;
 	cin >> sel;
 	if(sel == 1){
