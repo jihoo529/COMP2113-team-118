@@ -102,7 +102,7 @@ void dungeon(Game_data* data, int* location){
 			if(input == 1){
 				prob = rand() % 100; //double between 0 and 1
 				if(prob < monBP){//Monster's blocking probability
-					cout << "You BLOCKED attact !"<< endl;
+					cout << "Enemy BLOCKED your attact !"<< endl;
 				}
 				else{	
 					int reflect = rand() % 3;
@@ -163,10 +163,10 @@ void dungeon(Game_data* data, int* location){
 			}
 			prob = rand() % 100;
 			if(prob < data->play.bp){
-					cout << "Blocked enemy's attack !" << endl;
+					cout << "You BLOCKED enemy's attack !" << endl;
 			}else{
 				if(ult % 3 == 0){
-					cout << "Enemy is on rampage !" << endl;
+					cout << "Enemy is on RAMPAGE !" << endl;
 					cout << "You are damaged by " << monDamage <<"!!!" << endl; //monster gives double damage every 3 times of attack
 				}else{
 					cout << "You are damaged by " << monDamage <<"!"<< endl;
