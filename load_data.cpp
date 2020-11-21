@@ -5,6 +5,11 @@
 using namespace std;
 
 void load_data(int current_player, Usernames user, Game_data* data){
+	//load_data function loads player's data, such as level, abilities, which are stored in game_users.txt to the game. 
+	//Inputs are current_player, struct Usernames user, and struct Game_data data. 
+	//This function first gets input of current_player, which is the id number of the player that the user wants to play.
+	//Then the function loads the player name and data.
+	//There is no ouput since it is a void function.
 	ifstream fin;
 	string line;
 	fin.open("game_users.txt");
