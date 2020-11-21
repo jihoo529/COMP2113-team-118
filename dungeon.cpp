@@ -36,9 +36,9 @@ void dungeon(Game_data* data, int* location){
 			cout << "[1] Yes [2] No, take me to normal dungeon" << endl;
 			cin >> sel;
 			if(sel == 1){
-				monAD = 0.5* data->play.ad;
-				monHP = 0.5* data->play.totalHP;
-				monBP = data->play.bp;
+				monAD = 1.5* data->play.ad;
+				monHP = 1.5* data->play.totalHP;
+				monBP = 0.5*data->play.bp;
 				monType = 3;
 				monName = "Demogorgon";
 				winXP = 100;
@@ -211,10 +211,9 @@ void dungeon(Game_data* data, int* location){
 		if(monHP <= 0){
 			std::system("clear");
 			if(monType == 3){
-				cout << "You defeated the final boss of dungeon, the Demogorgon, hero..." << endl;
-				cout << endl;
-				cout << endl;
+				cout << "You finally defeated the final boss of dungeon, the Demogorgon, hero..." << endl;
 				win = 3;
+				sleep(3);
 				
 			}
 			if(monType != 3){
