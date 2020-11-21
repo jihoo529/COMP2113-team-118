@@ -12,6 +12,12 @@ using namespace std;
 //void save_data(Game_data* data, int* location);
 
 void village(Game_data* data, int* location, int current_player){
+	//This function gives the player 4 choices: 1.Go to store, 2.Go to dungeon, 3.Heal HP, 4.Save
+	//Also, the player can view their basic statistics in the village (LV, XP, HP, AD, CP) [BP is deliberately excluded, since it is not the ability that the player can access]
+	//The input of this function is Game_data structure, location integer, and current_player integer. Game_data structure is used to print the player statistics, the loation
+	//integer is used to take the player to the location they want to move to, and the current_player is not used in the village function, but in the save_data function.
+	//The output of thsi function is location integer. When the player input the number corresponding to the location, the village outputs the location and takes the player to
+	//the location that they want to move to.
 	system("clear");
 	ofstream fout;
 	int sel = 0;
