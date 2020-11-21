@@ -54,7 +54,7 @@ void dungeon(Game_data* data, int* location){
 			if(0 <= mon && mon <= 3 && monType != 3){
 				monAD = 0.5 * data->play.ad;
 				monHP = 0.5 * data->play.totalHP;
-				monBP = 0.5 * data->play.bp;
+				monBP = 0.2 * data->play.bp;
 				gold = 20;
 				monType = 0;
 				winXP = 15;
@@ -64,16 +64,16 @@ void dungeon(Game_data* data, int* location){
 			else if(3 < mon && 9 > mon && monType != 3){
 				monAD = 0.8 * data->play.ad;
 				monHP = 0.8 * data->play.totalHP;
-				monBP = 0.8 * data->play.bp;
+				monBP = 0.4 * data->play.bp;
 				gold = 30;
 				monType = 1;
 				winXP = 25;
 				monName = "Gorillta";
 			}
 			else if(mon == 9 && monType != 3){
-				monAD = 1.2 * data->play.ad;
-				monHP = 1.2 * data->play.totalHP;
-				monBP = 1 * data->play.bp;
+				monAD = 1 * data->play.ad;
+				monHP = 1 * data->play.totalHP;
+				monBP = 0.6 * data->play.bp;
 				gold = 100;
 				monType = 2;
 				winXP = 50;
