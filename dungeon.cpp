@@ -114,20 +114,20 @@ void dungeon(Game_data* data, int* location){
 							data->play.hp -= 0.3 * data->play.ad;
 						}
 					}
-							
-					prob = rand() % 100; 
-					if(prob < data->play.cp){
-						damage = data->play.ad * 2; // calculating critical damage
-						cout << "Critical HIT !!" << endl;
-						cout << damage << " damage dealt to enemy!" << endl;
-						monHP = monHP - damage;
+					else{	
+						prob = rand() % 100; 
+						if(prob < data->play.cp){
+							damage = data->play.ad * 2; // calculating critical damage
+							cout << "Critical HIT !!" << endl;
+							cout << damage << " damage dealt to enemy!" << endl;
+							monHP = monHP - damage;
+						}
+						else{
+							damage = data->play.ad;
+							cout << damage << " damage dealt to enemy!" << endl;
+							monHP = monHP - damage;
+						}
 					}
-					else{
-						damage = data->play.ad;
-						cout << damage << " damage dealt to enemy!" << endl;
-						monHP = monHP - damage;
-					}
-
 					
 					//cout << monHP - damage << "/" << monHP << endl; ; //damage dealt to monster
 					
