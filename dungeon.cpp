@@ -24,9 +24,7 @@ void dungeon(Game_data* data, int* location){
 	int damage;
 	int init = 0; 
 	while(run == 1){
-		int monAD; int monHP; float monBP; int gold; int monType; int totalmonHP; int winXP; string monName = "";
-		
-				
+		int monAD; int monHP; float monBP; int gold; int monType; int totalmonHP; int winXP; string monName = "";	
 		if(init == 0){
 			//int try = 0;
 			srand(time(0));
@@ -36,9 +34,9 @@ void dungeon(Game_data* data, int* location){
 			cout << "[1] Yes [2] No, take me to normal dungeon" << endl;
 			cin >> sel;
 			if(sel == 1){
-				monAD = 1.5* data->play.ad;
+				monAD = 1.2* data->play.ad;
 				monHP = 1.2* data->play.totalHP;
-				monBP = 0.5*data->play.bp;
+				monBP = 0.4*data->play.bp;
 				monType = 3;
 				monName = "Demogorgon";
 				winXP = 100;
@@ -55,7 +53,7 @@ void dungeon(Game_data* data, int* location){
 				monAD = 0.5 * data->play.ad;
 				monHP = 0.5 * data->play.totalHP;
 				monBP = 0.2 * data->play.bp;
-				gold = 20;
+				gold = 30;
 				monType = 0;
 				winXP = 15;
 				monName = "Slimer";
@@ -65,7 +63,7 @@ void dungeon(Game_data* data, int* location){
 				monAD = 0.8 * data->play.ad;
 				monHP = 0.8 * data->play.totalHP;
 				monBP = 0.4 * data->play.bp;
-				gold = 30;
+				gold = 50;;
 				monType = 1;
 				winXP = 25;
 				monName = "Gorillta";
