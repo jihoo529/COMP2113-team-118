@@ -234,7 +234,7 @@ void dungeon(Game_data* data, int* location){
 				data->play.level ++;
 				data->play.totalHP += 20;
 				data->play.ad += 5;
-				data->play.bp += 5;
+				data->play.bp += 10;
 				data->play.max_xp = data->play.max_xp * 1.5;
 				cout << "Level up ! Level : " << data->play.level << endl;
 			}else{
