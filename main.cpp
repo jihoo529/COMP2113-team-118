@@ -114,7 +114,7 @@ int main(){
 	if(sel == 1){
 		New_player initial;
 		new_user(&user, &data, &current_player, initial);
-		//tutorial();
+		tutorial();
 	}
 	else if(sel == 2){
 		cout << "Enter the number beside your username" << endl;
