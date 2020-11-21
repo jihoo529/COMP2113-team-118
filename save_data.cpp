@@ -5,6 +5,13 @@
 using namespace std;
 
 void save_data(Game_data* data, int* location, int current_player){
+	//This function saves the game data into the text file "game_users.txt". This function is included in the village.
+	//The input of the function is Game_data structure, and current_player integer. With the current_player integer, the function can recognize the player and overwrite the
+	//data in the correct line of the text file, so that it will be easy for the program to access the correct game data when it tries to load it next time. The Game_data
+	//structure is the data to overwrite on top of the existing data.
+	//The output ofthe function is location integer. After saving the data, the function asks the player whether they will continue the game or not. If the player chooses to
+	//continue playing the game, the location is set to 1, so that the player goes back to the village. If the player chooses to quit, then the location is set to 0, so that
+	//the player quits the game.
 	ifstream fin;
 	ofstream fout;
 	int total_player = 0; //initially 0
