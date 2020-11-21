@@ -2,10 +2,7 @@
 #include <fstream>
 #include <string>
 #include "save_data.h"
-//#include "common.h"
 using namespace std;
-
-//Game_data data;
 
 void save_data(Game_data* data, int* location, int current_player){
 	ifstream fin;
@@ -27,9 +24,7 @@ void save_data(Game_data* data, int* location, int current_player){
 		player = current_player;
 		++total_player;
 	}
-	//cout << current_player << endl;
-	//cout << total_player << endl;
-	//cout << player << endl;
+	
 	fin.close();
 	string* text = new string[total_player];
 	fin.open("game_users.txt");
