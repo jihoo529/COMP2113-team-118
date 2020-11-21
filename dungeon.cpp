@@ -86,7 +86,15 @@ void dungeon(Game_data* data, int* location){
 		std::system("clear");
 		
 		cout << "[HP] " << data->play.hp << " / " << data->play.totalHP << endl;
-		
+		if(monType == 3){
+			cout << "You have reached to the deepest part of underground dungeon ... " << endl; cout << endl;
+			sleep(3);
+			cout << "The primordial horror is now awaken ... " << endl; cout << endl;
+			sleep(3);
+			cou << "There is no way to hide." << endl; cout << endl;
+			sleep(2);
+			system("clear");
+		}
 		if(monType == 0){cout << "[Slimer] ";}
 		else if(monType == 1){cout << "[Gorillta] " ;}
 		else if(monType == 2){cout << "[Spider Queen] ";}
