@@ -206,7 +206,7 @@ void dungeon(Game_data* data, int* location){
 			cout << "You seriously injured... heading back to village" << endl;
 			cout << "You lost " << 20 << " golds..." << endl;
 			data->play.money -= 20;
-			data->play.hp = data->play.totalHP
+			data->play.hp = data->play.totalHP;
 			run = 0;
 			win = 0;
 			sleep(2);
