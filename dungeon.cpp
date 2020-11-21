@@ -40,7 +40,7 @@ void dungeon(Game_data* data, int* location){
 				monHP = 0.5* data->play.totalHP;
 				monBP = data->play.bp;
 				monType = 3;
-				monName += "Demogorgon";
+				monName = "Demogorgon";
 				winXP = 100;
 				gold = 300;
 				
@@ -58,7 +58,7 @@ void dungeon(Game_data* data, int* location){
 				gold = 20;
 				monType = 0;
 				winXP = 15;
-				monName += "Slimer";
+				monName = "Slimer";
 
 			}
 			else if(3 < mon && 9 > mon && monType != 3){
@@ -68,7 +68,7 @@ void dungeon(Game_data* data, int* location){
 				gold = 30;
 				monType = 1;
 				winXP = 25;
-				monName += "Gorillta";
+				monName = "Gorillta";
 			}
 			else if(mon == 9 && monType != 3){
 				monAD = 1.2 * data->play.ad;
@@ -77,7 +77,7 @@ void dungeon(Game_data* data, int* location){
 				gold = 100;
 				monType = 2;
 				winXP = 50;
-				monName += "Spider Queen";
+				monName = "Spider Queen";
 			}
 			totalmonHP = monHP;
 			init = 1;
