@@ -13,7 +13,6 @@ using namespace std;
 void village(Game_data*, int*, int);
 int location;
 
-
 void tutorial(){
 	int run = 1; int con  = 0;
 	while(run == 1){
@@ -53,7 +52,6 @@ void tutorial(){
 			break;
 		}
 	}
-	
 }
 
 int main(){
@@ -133,3 +131,4 @@ int main(){
 	}
 	cout << "Game quit... See you next time!" << endl;
 }
+\
