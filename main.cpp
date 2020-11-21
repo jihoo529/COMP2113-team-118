@@ -7,38 +7,13 @@
 #include "village.h"
 #include "store.h"
 #include "dungeon.h"
-//#include "common.h"
 #include "save_data.h"
 using namespace std;
 
 void village(Game_data*, int*, int);
 int location;
-//extern int location;
-const int MAXHP = 10000;
-const int MAXAD = 10000;
-const int MAXBP = 60;
-const int MAXLEVEL = 100;
-/*
-struct Player{
-	int level, max_xp, current_xp, totalHP, hp, ad, bp, cp, money;
-};
-struct Game_data{
-	string username;
-	Player play;
-};
-struct New_player{
-	int level = 1;
-	int max_xp = level*50;
-	int current_xp = 0;
-	int totalHP = 50, hp = 50, ad = 10, bp = 5;
-	int cp = 0;
-	int money = 100;
-};
-struct Usernames{
-	int num = 0;
-	string *user = new string [0];
-};
-*/
+
+
 void tutorial(){
 	int run = 1; int con  = 0;
 	while(run == 1){
@@ -80,11 +55,6 @@ void tutorial(){
 	}
 	
 }
-
-/* void save_data(Gace_data* data, int* location);
-\\ void village(Game_data* data, int* location);
-\\ void store(Game_data* data, int* location);
-\\ void dungeon(Game_data* data, int* location);*/
 
 int main(){
 	Usernames user;
@@ -158,8 +128,6 @@ int main(){
 			cout << "Eunhye Yang" << endl; cout << endl;
 			cout << "Jihoo Lee" << endl;
 			sleep(4);
-	
-			
 			location = 1;
 		}
 	}
