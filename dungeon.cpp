@@ -202,7 +202,7 @@ void dungeon(Game_data* data, int* location){
 				cout << endl;
 				cout << endl;
 				win = 3;
-				run = 0;
+				
 			}
 			if(monType != 3){
 				cout << "YOU: [HP] " << data->play.hp << " / " << data->play.totalHP << endl;
@@ -211,6 +211,7 @@ void dungeon(Game_data* data, int* location){
 				cout << "You defeated "<<monName <<"!" << endl;
 				cout << winXP << " xp gained !" << endl;
 				cout << gold << " gold gained !" << endl;
+				win = 1;
 			}
 			//
 			data->play.money += gold;
@@ -228,7 +229,6 @@ void dungeon(Game_data* data, int* location){
 			}
 				
 			run = 0;
-			win = 1;
 		}
 		if(win == 1){
 			cout << "Continue with dungeon ?" << endl;
