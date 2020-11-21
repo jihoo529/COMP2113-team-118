@@ -5,20 +5,16 @@
 #include <unistd.h>
 #include <string>
 #include "dungeon.h"
-//#include "common.h"
-
 using namespace std;
 
-//const stat[] = { }
-//int* try = 0;
-
-
 void dungeon(Game_data* data, int* location){
+	//Dungeon function provides the display of monsters and the battle system. The battle system is based on probabilities, 3 types of monsters (weak, normal, and strong)
+	//appears by certain probabilities. Normal monsters have the highest probability to appear, and strong monsters have the lowest. 
+	//Inputs of the funcition are struct Game_data and location. Since abilities of monsters are based on player's abilities, and player's abilities should be modified
+	//during the battle, dungeon function can access to these data by input Game_data* data. After the battle, player can either go back to village or further travel
+	//dungeon. These can be done by changing int* location input.
 	srand(time(0));
-	//int* try;
-	
  	int turn = random() % 2;
-	
 	int win = 2;
 	int run = 1; int ult = 1;
 	int damage;
@@ -26,7 +22,6 @@ void dungeon(Game_data* data, int* location){
 	while(run == 1){
 		int monAD; int monHP; float monBP; int gold; int monType; int totalmonHP; int winXP; string monName = "";	
 		if(init == 0){
-			//int try = 0;
 			srand(time(0));
 			if(data->play.level >= 5){
 			int sel;
@@ -41,7 +36,6 @@ void dungeon(Game_data* data, int* location){
 				monName = "Demogorgon";
 				winXP = 100;
 				gold = 300;
-				
 			}//boss stage
 			else if(sel == 2){
 				cout << "Returning back to original dungeon" << endl;
@@ -80,7 +74,6 @@ void dungeon(Game_data* data, int* location){
 			totalmonHP = monHP;
 			init = 1;
 		}
-		
 		std::system("clear");
 		if(monType == 3 && init == 1){
 			cout << "You have reached to the deepest part of underground dungeon ... " << endl; cout << endl;
@@ -92,7 +85,6 @@ void dungeon(Game_data* data, int* location){
 			system("clear");
 			init = 2;
 		}
-		
 		cout << "[HP] " << data->play.hp << " / " << data->play.totalHP << endl;
 		if(monType == 0){cout << "[Slimer] ";}
 		else if(monType == 1){cout << "[Gorillta] " ;}
@@ -135,11 +127,7 @@ void dungeon(Game_data* data, int* location){
 						damage = data->play.ad;
 						cout << damage << " damage dealt to enemy!" << endl;
 						monHP = monHP - damage;
-					}
-					
-					
-					//cout << monHP - damage << "/" << monHP << endl; ; //damage dealt to monster
-					
+					}	
 				}
 			}
 			else if(input == 2){
@@ -159,7 +147,6 @@ void dungeon(Game_data* data, int* location){
 			turn = 0;
 			sleep(2);
 		}
-		
 		else if(turn == 0){//monster's turn
 			int monDamage = monAD;
 			cout << endl;
@@ -175,7 +162,6 @@ void dungeon(Game_data* data, int* location){
 				monDamage = monAD;
 			}
 			prob = rand() % 100;
-			
 			if(prob < data->play.bp){
 					cout << "Blocked enemy's attack !" << endl;
 			}else{
@@ -186,15 +172,11 @@ void dungeon(Game_data* data, int* location){
 					cout << "You are damaged by " << monDamage <<"!"<< endl;
 				}
 				data->play.hp = data->play.hp - monDamage;
-				//cout << "[HP] " << HP << " / " << totalHP << endl;
 			}
-			
 			ult += 1;
 			turn = 1;
 			sleep(2);
 		}
-		//sleep(2);
-
 		if(data->play.hp <= 0){
 			std::system("clear");
 			cout << "YOU: [HP] 0 / " << data->play.totalHP << endl;
@@ -215,7 +197,6 @@ void dungeon(Game_data* data, int* location){
 				cout << "You finally defeated the final boss of dungeon, the Demogorgon, hero..." << endl;
 				win = 3;
 				sleep(3);
-				
 			}
 			if(monType != 3){
 				cout << "YOU: [HP] " << data->play.hp << " / " << data->play.totalHP << endl;
@@ -228,7 +209,6 @@ void dungeon(Game_data* data, int* location){
 			}
 			//
 			data->play.money += gold;
-			//level up
 			if(data->play.current_xp + winXP >= data->play.max_xp){
 				data->play.current_xp = data->play.current_xp + winXP - data->play.max_xp;
 				data->play.level ++;
@@ -240,7 +220,6 @@ void dungeon(Game_data* data, int* location){
 			}else{
 				data->play.current_xp += winXP;
 			}
-				
 			run = 0;
 		}
 		if(win == 1){
@@ -252,36 +231,22 @@ void dungeon(Game_data* data, int* location){
 				location[0] = 3;
 				cout <<"Bonus gold [" << gold*0.2 << "] gained !" << endl; sleep(2);
 				data->play.money += gold*0.2;
-				
-				//try += 1;
 				continue;
-				
 			}
 			else if(input == 2){
 				location[0] = 1;
 				cout << "Returning to village ... " << endl;
-				//try = 0;
 				run = 0;
 			}
 		}
 		else if(win == 0){
 			sleep(2);
 			location[0] = 1;
-			//try = 0;
 			run = 0;
 		}
 		else if(win == 3){
 			location[0] = 10;
-			//cout << "You are the hero of the village. Going back to your village ... " << endl;
 			run = 0;
-			//system("clear");
 		}
-			
-		
-	}//end of while (run == 1) loop
-	
+	}//end of while (run) loop
 }
-
-
-
-
