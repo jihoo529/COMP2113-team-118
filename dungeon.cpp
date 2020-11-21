@@ -91,7 +91,7 @@ void dungeon(Game_data* data, int* location){
 			sleep(3);
 			cout << "The primordial horror is now awaken ... " << endl; cout << endl;
 			sleep(3);
-			cou << "There is no way to hide." << endl; cout << endl;
+			cout << "There is no way to hide." << endl; cout << endl;
 			sleep(2);
 			system("clear");
 		}
