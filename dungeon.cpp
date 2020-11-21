@@ -84,8 +84,6 @@ void dungeon(Game_data* data, int* location){
 		}
 		
 		std::system("clear");
-		
-		cout << "[HP] " << data->play.hp << " / " << data->play.totalHP << endl;
 		if(monType == 3 && init == 1){
 			cout << "You have reached to the deepest part of underground dungeon ... " << endl; cout << endl;
 			sleep(3);
@@ -96,6 +94,8 @@ void dungeon(Game_data* data, int* location){
 			system("clear");
 			init = 2;
 		}
+		
+		cout << "[HP] " << data->play.hp << " / " << data->play.totalHP << endl;
 		if(monType == 0){cout << "[Slimer] ";}
 		else if(monType == 1){cout << "[Gorillta] " ;}
 		else if(monType == 2){cout << "[Spider Queen] ";}
@@ -163,7 +163,11 @@ void dungeon(Game_data* data, int* location){
 		else if(turn == 0){//monster's turn
 			int monDamage = monAD;
 			cout << endl;
-			cout << monName <<" attacked you !" << endl;
+			if(monType == 0){cout << "[Slimer] ";}
+			else if(monType == 1){cout << "[Gorillta] " ;}
+			else if(monType == 2){cout << "[Spider Queen] ";}
+			else if(monType == 3){cout << "[Demogorgon] " ;}
+			cout <<" attacked you !" << endl;
 			//cout << ult << endl;
 			if(ult % 3 == 0){
 				monDamage = 1.2 * monAD;
@@ -207,7 +211,7 @@ void dungeon(Game_data* data, int* location){
 		if(monHP <= 0){
 			std::system("clear");
 			if(monType == 3){
-				cout << "You defeated the final boss of dungeon, hero..." << endl;
+				cout << "You defeated the final boss of dungeon, the Demogorgon, hero..." << endl;
 				cout << endl;
 				cout << endl;
 				win = 3;
