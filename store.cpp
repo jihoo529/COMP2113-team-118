@@ -1,11 +1,13 @@
 #include <iostream>
 #include <unistd.h>
 #include "store.h"
-//#include "common.h"
 using namespace std;
 
 void store(Game_data* data, int* location){
-	//Game_data data
+	//Store function displays store, and player can either buy health potions or upgrade weapon by purchasing them. Inputs are game data and location.
+	//User can exit the store by assigning int 1 to varible location.
+	//Modifications of player's abilities are re-writed.
+	//No output since it is a void function.
 	
 	bool run = 1;
 	while(run == 1){
