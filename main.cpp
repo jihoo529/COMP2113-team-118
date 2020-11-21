@@ -56,6 +56,9 @@ void tutorial(){
 		cout << "You can either further travel the dungeon or go back to village if you defeat. Bonus gold will be given if you further travel the dungeon." << endl; sleep(1);
 		cout << "But if you lose, you have to go back to village. Enemy will take some gold from you" << endl; sleep(2);
 		system("clear");
+		cout << "You can enter the BOSS dungeon if you reach level 5." << endl;
+		cout << "The boss is very powerful, make sure to enhance your abilities enough before the battle with boss." << endl;
+		cout << endl;
 		cout << "Then..... GOOD LUCK !!!" << endl;
 		cout << endl;
 		cout << "Do you want to go through the tutorial again? [1] Yes [2] No" << endl;
