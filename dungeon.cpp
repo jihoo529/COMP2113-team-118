@@ -30,14 +30,14 @@ void dungeon(Game_data* data, int* location){
 		if(init == 0){
 			//int try = 0;
 			srand(time(0));
-			if(data->play.level >= 2){
+			if(data->play.level >= 5){
 			int sel;
 			cout << "Hidden dungeon is revealed. Do you want to go in?" << endl;
 			cout << "[1] Yes [2] No, take me to normal dungeon" << endl;
 			cin >> sel;
 			if(sel == 1){
 				monAD = 1.5* data->play.ad;
-				monHP = 1.5* data->play.totalHP;
+				monHP = 1.2* data->play.totalHP;
 				monBP = 0.5*data->play.bp;
 				monType = 3;
 				monName = "Demogorgon";
@@ -118,10 +118,12 @@ void dungeon(Game_data* data, int* location){
 					int reflect = rand() % 3;
 					int pass = 0;
 					prob = rand() % 100; 
+					int reflect_dam = 0.3 * data->play.ad;
+				
 					if(monType == 3 && reflect == 1){
 						cout << "Monster REFLECTED your attack ...!" << endl;
-						cout << "You are damaged by " << 0.3 * data->play.ad <<"!!"<< endl;
-						data->play.hp -= 0.3 * data->play.ad;	
+						cout << "You are damaged by " << reflect_dam <<"!!"<< endl;
+						data->play.hp -= reflect_dam;	
 						pass = 1;
 						
 					}
