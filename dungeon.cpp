@@ -25,7 +25,7 @@ void dungeon(Game_data* data, int* location){
 			srand(time(0));
 			if(data->play.level >= 5){
 			int sel;
-			cout << "Hidden dungeon is revealed. Do you want to go in?" << endl;
+			cout << "Hidden dungeon has been revealed. Do you want to go in?" << endl;
 			cout << "[1] Yes [2] No, take me to normal dungeon" << endl;
 			cin >> sel;
 			if(sel == 1){
@@ -78,7 +78,7 @@ void dungeon(Game_data* data, int* location){
 		if(monType == 3 && init == 1){
 			cout << "You have reached to the deepest part of underground dungeon ... " << endl; cout << endl;
 			sleep(3);
-			cout << "The primordial horror is now awaken ... " << endl; cout << endl;
+			cout << "The ancient horror is now awaken ... " << endl; cout << endl;
 			sleep(3);
 			cout << "There is no way to hide." << endl; cout << endl;
 			sleep(2);
@@ -102,7 +102,7 @@ void dungeon(Game_data* data, int* location){
 			if(input == 1){
 				prob = rand() % 100; //double between 0 and 1
 				if(prob < monBP){//Monster's blocking probability
-					cout << "Attack BLOCKED !"<< endl;
+					cout << "You BLOCKED attact !"<< endl;
 				}
 				else{	
 					int reflect = rand() % 3;
@@ -119,7 +119,7 @@ void dungeon(Game_data* data, int* location){
 					}
 					if(prob < data->play.cp && pass != 1){
 						damage = data->play.ad * 2; // calculating critical damage
-						cout << "Critical HIT !!" << endl;
+						cout << "CRITICAL HIT !!!" << endl;
 						cout << damage << " damage dealt to enemy!" << endl;
 						monHP = monHP - damage;
 					}
@@ -166,7 +166,7 @@ void dungeon(Game_data* data, int* location){
 					cout << "Blocked enemy's attack !" << endl;
 			}else{
 				if(ult % 3 == 0){
-					cout << "Enemy got angree !" << endl;
+					cout << "Enemy is on rampage !" << endl;
 					cout << "You are damaged by " << monDamage <<"!!!" << endl; //monster gives double damage every 3 times of attack
 				}else{
 					cout << "You are damaged by " << monDamage <<"!"<< endl;
@@ -183,7 +183,7 @@ void dungeon(Game_data* data, int* location){
 			cout << "ENEMY: [HP] " << monHP << " / " << totalmonHP << endl;
 			cout << "-------------------------------------------------" << endl;
 			cout << "....." << endl;
-			cout << "You seriously injured... heading back to village" << endl;
+			cout << "You are seriously injured... heading back to village" << endl;
 			cout << "You lost " << 20 << " golds..." << endl;
 			data->play.money -= 20;
 			data->play.hp = data->play.totalHP;
@@ -236,6 +236,7 @@ void dungeon(Game_data* data, int* location){
 			else if(input == 2){
 				location[0] = 1;
 				cout << "Returning to village ... " << endl;
+				sleep(1);
 				run = 0;
 			}
 		}
