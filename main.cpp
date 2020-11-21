@@ -14,6 +14,8 @@ void village(Game_data*, int*, int);
 int location;
 
 void tutorial(){
+	//This function prints the instructions and the general rule of the game, explaining each locations (village, store, dungeon), what kind of monsters there are, what
+	//the player can do with the gold they earned, and so on. There is no input nor output for this function. This function is called only when a new player is created.
 	int run = 1; int con  = 0;
 	while(run == 1){
 		system("clear");
