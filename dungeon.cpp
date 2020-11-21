@@ -107,27 +107,27 @@ void dungeon(Game_data* data, int* location){
 				}
 				else{	
 					int reflect = rand() % 3;
-					if(monType == 3){
-						if(reflect == 1){
-							cout << "Monster REFLECTED your attack ...!" << endl;
-							cout << "You are damaged by " << 0.3 * data->play.ad <<"!!"<< endl;
-							data->play.hp -= 0.3 * data->play.ad;
-						}
+					int pass = 0;
+					prob = rand() % 100; 
+					if(monType == 3 && reflect == 1){
+						cout << "Monster REFLECTED your attack ...!" << endl;
+						cout << "You are damaged by " << 0.3 * data->play.ad <<"!!"<< endl;
+						data->play.hp -= 0.3 * data->play.ad;	
+						pass = 1;
+						
 					}
-					else{	
-						prob = rand() % 100; 
-						if(prob < data->play.cp){
-							damage = data->play.ad * 2; // calculating critical damage
-							cout << "Critical HIT !!" << endl;
-							cout << damage << " damage dealt to enemy!" << endl;
-							monHP = monHP - damage;
-						}
-						else{
-							damage = data->play.ad;
-							cout << damage << " damage dealt to enemy!" << endl;
-							monHP = monHP - damage;
-						}
+					if(prob < data->play.cp && pass != 1){
+						damage = data->play.ad * 2; // calculating critical damage
+						cout << "Critical HIT !!" << endl;
+						cout << damage << " damage dealt to enemy!" << endl;
+						monHP = monHP - damage;
 					}
+					else if(prob >= data->play.cp && pass != 1){
+						damage = data->play.ad;
+						cout << damage << " damage dealt to enemy!" << endl;
+						monHP = monHP - damage;
+					}
+					
 					
 					//cout << monHP - damage << "/" << monHP << endl; ; //damage dealt to monster
 					
