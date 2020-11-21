@@ -17,7 +17,7 @@ struct New_player{
 	int current_xp = 0;
 	int totalHP = 50, hp = 50, ad = 10, bp = 10;
 	int cp = 0;
-	int money = 100;
+	int money = 0;
 	int nump = 3;
 };
 
