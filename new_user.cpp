@@ -22,7 +22,7 @@ void new_user(Usernames* user, Game_data* data, int* current_player, New_player 
 			}
 			else{++count;}
 		}//end of for loop 1
-		//cout << user->num << " " << count;
+		
 		if(user->num == count){
 			data->username = newname;
 			data->play.level = initial.level;
@@ -39,6 +39,5 @@ void new_user(Usernames* user, Game_data* data, int* current_player, New_player 
 			++user->num;
 			run = 0;
 		}
-		//run = 0;
 	}
 }
