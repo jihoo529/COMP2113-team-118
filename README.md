@@ -57,11 +57,11 @@ BP: Blocking point of the player. The higher the bp, the more frequent the playe
 CP: Critical point of the player. The higher the cp, the more frequent the player achieves critical hit on the monster. Critical hit = 1.2*ad.
 
 Locations:
-Village: The player can heal themsevles and save their game data.
+Village: The player can heal themselves and save their game data.
 
 Store: The player can buy health potions and/or upgrade their weapons (increase cp).
 
-Dungeon: The player encounters monster of random strength. After defeating a monster, the player can either choose to continue with dungeon or can go back to the village. If the player chooses to continue with the dungeon, the player gains extra gold for combo. However, if the player dies in the middle of a battle with monster, the player loses 20 gold.
+Dungeon: The player encounters monsters of random strength. After defeating a monster, the player can either choose to continue with the dungeon or can go back to the village. If the player chooses to continue with the dungeon, the player gains extra gold for combo. However, if the player dies in the middle of a battle with a monster, the player loses 20 gold.
 
 Features (Coding requirements):
 1. Random monsters (generation of random game sets or events): In the dungeon, the player encounters monsters of different strength randomly. Weak: 40%, Intermediate: 50%, Hard: 10%
@@ -77,22 +77,3 @@ How to compile and execute the program:
 4. In village, press 4 to save the game and then press 2 to quit the game.
 5. To reload the game, input '''./main'''
 6. The "game_users.txt" formed after game execution is for the game data. Do not delete this file unless you want to reset the whole program.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
