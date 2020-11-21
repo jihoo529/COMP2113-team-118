@@ -16,7 +16,7 @@ int location;
 //extern int location;
 const int MAXHP = 10000;
 const int MAXAD = 10000;
-const int MAXBP = 40;
+const int MAXBP = 60;
 const int MAXLEVEL = 100;
 /*
 struct Player{
