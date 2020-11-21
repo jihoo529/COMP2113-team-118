@@ -40,7 +40,7 @@ struct Usernames{
 };
 */
 void tutorial(){
-	int run = 1; int con ;
+	int run = 1; int con  = 0;
 	while(run == 1){
 		system("clear");
 		cout << "$$$~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$$$" << endl;
@@ -49,16 +49,24 @@ void tutorial(){
 		cout << "You can either travel dungeon or visit store in this village." << endl; sleep(1);
 		cout << "[Store] You can buy health potions or upgrade your weapon in the store." << endl; sleep(1);
 		cout << "If you upgrade your weapon, it will give a critical damage to enemy more often." << endl; sleep(2);
-		cout << "Enter to continue" << endl;
+		cout << "[1] Continue" << endl;
 		cin >> con;
+		if(con == 1){
+			pass;
+		}
+		con = 0;
 		system("clear");
 		cout << "[Dungeon] There are 3 types of monsters in dungeon. A weak, normal, and a mini boss" << endl; sleep(1);
 		cout << "Stronger monsters will give more golds if you defeat them." << endl; sleep(1);
 		cout << "You can level up and earn gold if you defeat your enemy. Your abilities will then be enhanced" << endl; sleep(1);
 		cout << "You can either further travel the dungeon or go back to village if you defeat. Bonus gold will be given if you further travel the dungeon." << endl; sleep(1);
 		cout << "But if you lose, you have to go back to village. Enemy will take some gold from you" << endl; sleep(2);
-		cout << "Enter to continue" << endl;
+		cout << "[1] Continue" << endl;
 		cin >> con;
+		if(con == 1){
+			pass;
+		}
+		con = 0;
 		system("clear");
 		cout << "You can enter the BOSS dungeon if you reach level 5." << endl;
 		cout << "The boss is very powerful, make sure to enhance your abilities enough before the battle with boss." << endl;
