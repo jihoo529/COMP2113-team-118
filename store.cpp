@@ -16,8 +16,8 @@ void store(Game_data* data, int* location){
 		cout << "[CP] " << data->play.cp << endl;
 		cout << "[Gold] " << data->play.money << endl;
 		cout << "------------------------------" << endl;
-		cout << "[1] Health potion - 30 gold" << endl;
-		cout << "[2] Upgrade weapon - 200 gold" << endl;
+		cout << "[1] Health potion - 20 gold" << endl;
+		cout << "[2] Upgrade weapon - 100 gold" << endl;
 		cout << "[3] Exit store" << endl;
 		int input;
 		cin >> input;
@@ -25,7 +25,7 @@ void store(Game_data* data, int* location){
 			cout << "How many?" << endl;
 			int n;
 			cin >> n;
-			if(data->play.money - n*30 < 0){
+			if(data->play.money - n*20 < 0){
 				cout << "Not enough gold !" << endl;
 				sleep(3);
 				continue;
@@ -34,14 +34,14 @@ void store(Game_data* data, int* location){
 				cout << "Thank you" << endl;
 				cout << "You got " << n << " health potions !" << endl;
 				data->play.nump += n;
-				data->play.money = data->play.money - n* 30;
+				data->play.money = data->play.money - n* 20;
 				cout << "You have " << data->play.money << " golds left" << endl;
 				sleep(3);
 				continue;
 			}
 		}
 		else if(input == 2){
-			if(data->play.money < 200){
+			if(data->play.money < 100){
 				cout << "Not enough money... !" << endl;
 				sleep(2);
 				continue;
@@ -49,7 +49,7 @@ void store(Game_data* data, int* location){
 				cout << "Black smith: upgraded completed ..!" << endl;
 				cout << "Your critical probability has increased by 5" << endl;
 				data->play.cp += 5;
-				data->play.money = data->play.money - 200;
+				data->play.money = data->play.money - 100;
 				cout << "You have " << data->play.money << " golds left" << endl;
 				sleep(3);
 				continue;
