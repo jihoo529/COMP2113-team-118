@@ -70,6 +70,10 @@ Features (Coding requirements):
 4. Continue (File input/output): File input and output was utilized to implement the “continue” feature. When a new player is formed and saved for the first time, the program creates a text file called “game_users.txt”. Then, when the player loads their game data, the program reads the user data from the file and saves it to the Game_data structure to use it in the game.
 5. Program codes in multiple files: To make the code lighter, we wrote one main.cpp file and wrote each of the functions in separate .cpp files (except tutorial()) and for each .cpp file, we wrote a header file, and compiled all of them with makefile. We have included our structures in another separate header file called “common.h”.
 
+Non-standard C/C++ libraries:
+#include <unistd.h>
+The library unistd.h allows the program to implement sleep() function. Sleep(n) function stops the console display for n seconds. This feature helps the game to have a better readability for users.
+
 How to compile and execute the program:
 1. In ubuntu or terminal, input '''make main''' to compile the codes.
 2. Then, input '''./main''' to execute the program.
