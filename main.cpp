@@ -134,17 +134,21 @@ int main(){
 		else if(location == 2){store(&data, &location);}
 		else if(location == 3){dungeon(&data, &location);}
 		else if(location == 10){
+			system("clear");
 			cout << "Congratulations! You defeated Demogorgon and saved the village.." << endl;
-			sleep(1.5);
+			sleep(2);
 			cout << "Now you can enjoy the game freely by earning golds and XPs to further strengthen yourself." << endl;
-			sleep(1.5);
+			sleep(2);
 			cout << "Thank you for playing." << endl;
-			sleep(1.5);
+			sleep(2);
+			cout << endl;
 			cout << "<Credits>" << endl;
 			cout << endl;
 			cout << "Eunhye Yang" << endl; cout << endl;
 			cout << "Jihoo Lee" << endl;
-			sleep(3);
+			sleep(4);
+	
+			
 			location = 1;
 		}
 	}
