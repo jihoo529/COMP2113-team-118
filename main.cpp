@@ -51,9 +51,7 @@ void tutorial(){
 		cout << "If you upgrade your weapon, it will give a critical damage to enemy more often." << endl; sleep(2);
 		cout << "[1] Continue" << endl;
 		cin >> con;
-		if(con == 1){
-			pass;
-		}
+		if(con == 1){}
 		con = 0;
 		system("clear");
 		cout << "[Dungeon] There are 3 types of monsters in dungeon. A weak, normal, and a mini boss" << endl; sleep(1);
@@ -63,9 +61,7 @@ void tutorial(){
 		cout << "But if you lose, you have to go back to village. Enemy will take some gold from you" << endl; sleep(2);
 		cout << "[1] Continue" << endl;
 		cin >> con;
-		if(con == 1){
-			pass;
-		}
+		if(con == 1){}
 		con = 0;
 		system("clear");
 		cout << "You can enter the BOSS dungeon if you reach level 5." << endl;
